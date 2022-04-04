@@ -8,4 +8,7 @@
     <string name="android_project">Android Project</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
+    <string name="workout_timer">Workout Timer</string>
+    <string name="start_timer">00:00</string>
+    <string name="timer_quote">Do not leave for tomorrow what you can do today</string>
 </resources>
