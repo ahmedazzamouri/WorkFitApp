@@ -11,4 +11,17 @@
     <string name="workout_timer">Workout Timer</string>
     <string name="start_timer">00:00</string>
     <string name="timer_quote">Do not leave for tomorrow what you can do today</string>
+
+
+
+    <string name="three_day_split">3 Day Split</string>
+    <string name="three_day_split_day1">Day 1</string>
+    <string name="three_day_split_day2">Day 2</string>
+    <string name="three_day_split_day3">Day 3</string>
+    <string name="three_day_split_day1workout">Chest/Back</string>
+    <string name="three_day_split_day2workout">Arms/Shoulders</string>
+    <string name="three_day_split_day3workout">Legs/Abs</string>
+    <string name="three_day_split_day1exercises">1. Dumbbell Press (3x16)\n 2. Dumbbell Flys (3x12)\n 3. Decline Press (3x18)\n 4. Military Press (3x12)\n 5. Dumbbell Rows (3x12)\n 6. Lat Rows (3x18)\n 7. Cable Rows (3x12)\n 8. Barbell DeadLift (3x8)</string>
+    <string name="three_day_split_day2exercises">1. Bicep Curls (3x16)\n 2. Preacher Curls (3x12)\n 3. Incline Curls (3x18)\n 4. Hammer Curls (3x12)\n 5. Tricep Extensions (3x12)\n 6. Cable Pull Downs (3x18)\n 7. SkullCrushers (3x12)\n 8. Diamond Pushups (3x8)</string>
+    <string name="three_day_split_day3exercises">1. Weighted Squats (3x16)\n 2. Reverse Lunges (3x12)\n 3. Side Lunges (3x18)\n 4. Sumo Squats (3x12)\n 5. Deadlifts (3x12)\n 6. Planks (3x18)\n 7. Hanging Knee Raise (3x12)\n 8. Dumbbell Side Bends (3x8)</string>
 </resources>
