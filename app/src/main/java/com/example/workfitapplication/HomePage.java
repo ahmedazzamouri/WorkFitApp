@@ -50,8 +50,8 @@ public class HomePage extends AppCompatActivity implements NavigationView.OnNavi
             startActivity(intent2);*/
         }
         else if (id == R.id.nav_splits){
-           /* Intent intent3 = new Intent(HomePage.this, Splits.class);
-            startActivity(intent3);*/
+            Intent intent3 = new Intent(HomePage.this, DaySplits.class);
+            startActivity(intent3);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
