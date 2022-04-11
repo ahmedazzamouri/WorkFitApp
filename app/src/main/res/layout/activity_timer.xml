@@ -11,12 +11,12 @@
         android:id="@+id/textview3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/baloo"
         android:text="@string/workout_timer"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="170dp"
         android:fontFamily="@font/baloo"
-        android:text="@string/start_timer"
+        android:text="@string/text_timer"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,24 +35,80 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:fontFamily="@font/black_ops"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/baloo"
         android:text="@string/timer_quote"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
+        android:id="@+id/timer_clock_view"
         android:layout_width="320dp"
         android:layout_height="320dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/timer_description"
         android:src="@drawable/clock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview3"/>
+        app:layout_constraintTop_toBottomOf="@+id/textview3" />
 
+    <EditText
+        android:id="@+id/edit_text_timer"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="@string/clock_hint"
+        android:inputType="number"
+        android:maxLength="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_clock_view" />
+
+    <Button
+        android:id="@+id/set_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/set_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_clock_view" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/baloo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="@string/start_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_clock_view" />
+
+    <Button
+        android:id="@+id/button_reset"
+        android:backgroundTint="@color/black"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/baloo"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="@string/reset_timer"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_clock_view"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
