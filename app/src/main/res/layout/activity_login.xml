@@ -40,7 +40,8 @@
         android:hint="@string/login_email"
         android:inputType="textEmailAddress"
         android:padding="15dp"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/login_pwd"
@@ -57,7 +58,8 @@
         android:hint="@string/login_pwd"
         android:inputType="textPassword"
         android:padding="15dp"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/login_bttn"
@@ -80,7 +82,8 @@
         android:layout_above="@+id/swipe_right"
         android:layout_centerHorizontal="true"
         android:src="@drawable/arrow_right"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/button_right_desc" />
 
     <TextView
         android:id="@+id/swipe_right"
