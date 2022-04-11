@@ -15,7 +15,7 @@
         <activity android:name=".SixDaySplitActivity"/>
         <activity android:name=".DaySplits"/>
         <activity android:name=".StepCountActivity"/>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".HomePage"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
