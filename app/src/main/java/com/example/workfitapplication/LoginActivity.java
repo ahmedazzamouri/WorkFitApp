@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     ImageButton register;
     boolean isEmailValid, isPasswordValid;
-    TextInputLayout emailError, passError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -34,8 +33,9 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                setValidation();
+                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -49,27 +49,25 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    /*public void SetValidation(){
+    public void setValidation(){
         if (email.getText().toString().isEmpty()){
-            emailError.setError(getResources().getString(R.string.email_error));
+            Toast.makeText(getApplicationContext(),R.string.email_error, Toast.LENGTH_SHORT).show();
             isEmailValid = false;
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()){
-            emailError.setError(getResources().getString(R.string.error_invalid_email));
+            Toast.makeText(getApplicationContext(),R.string.error_invalid_email, Toast.LENGTH_SHORT).show();
             isEmailValid = false;
         } else {
             isEmailValid = true;
-            emailError.setErrorEnabled(false);
         }
 
         if (password.getText().toString().isEmpty()){
-            passError.setError(getResources().getString(R.string.password_error));
+            Toast.makeText(getApplicationContext(),R.string.password_error, Toast.LENGTH_SHORT).show();
             isPasswordValid = false;
         } else if (password.getText().length() < 6){
-            passError.setError(getResources().getString(R.string.error_invalid_password));
+            Toast.makeText(getApplicationContext(),R.string.error_invalid_password, Toast.LENGTH_SHORT).show();
             isPasswordValid = false;
         } else {
             isPasswordValid = true;
-            passError.setErrorEnabled(false);
         }
 
         if (isEmailValid && isPasswordValid){
@@ -77,5 +75,5 @@ public class LoginActivity extends AppCompatActivity {
             Intent in = new Intent(getApplicationContext(),Timer.class);
             startActivity(in);
         }
-    }*/
+    }
 }
