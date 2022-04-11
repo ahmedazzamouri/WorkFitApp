@@ -60,6 +60,7 @@
         android:textSize="15sp" />
 
     <Button
+        android:id="@+id/login_bttn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/login_pwd"
@@ -72,12 +73,14 @@
         android:text="@string/tv_login"
         android:textColor="@color/white" />
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/register_button"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_above="@+id/swipe_right"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/arrow_right" />
+        android:src="@drawable/arrow_right"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/swipe_right"
