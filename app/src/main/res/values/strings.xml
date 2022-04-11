@@ -5,9 +5,11 @@
     <string name="home_page_name">Work Fit</string>
     <string name="better">Better Yourself Each Day</string>
     <string name="home_page_msg">We hope you make an optimum use\n of the app for your gains</string>
-    <string name="android_project">Android Project</string>
-    <string name="Open">Open</string>
-    <string name="Close">Close</string>
+    <string name="tv_login">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_pwd">Password</string>
+    <string name="swipe_left_for_login">Swipe Left for Login</string>
+    <string name="swipe_right_for_register">Swipe Right for Register</string>
 
     <string name="workout_timer">Workout Timer</string>
     <string name="calorie_calculator">Calorie Calculator</string>

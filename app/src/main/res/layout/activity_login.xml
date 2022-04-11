@@ -1,6 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    tools:context=".LoginActivity">
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"/>
+
+
+    <TextView
+        android:id="@+id/login_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_logo"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-48dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/indigo_daisy"
+        android:text="@string/tv_login"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_tv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="-155dp"
+        android:background="@drawable/edittext_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/login_email"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/login_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/login_email"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="-110dp"
+        android:background="@drawable/edittext_custom"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/login_pwd"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textSize="15sp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_pwd"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/tv_login"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_above="@+id/swipe_right"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/arrow_right" />
+
+    <TextView
+        android:id="@+id/swipe_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/swipe_right_for_register"
+        android:textSize="15sp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+
+
+</RelativeLayout>
