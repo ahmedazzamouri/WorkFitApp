@@ -34,7 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SetValidation();
+                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(intent);
             }
         });
 
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void SetValidation(){
+    /*public void SetValidation(){
         if (email.getText().toString().isEmpty()){
             emailError.setError(getResources().getString(R.string.email_error));
             isEmailValid = false;
@@ -73,6 +74,8 @@ public class LoginActivity extends AppCompatActivity {
 
         if (isEmailValid && isPasswordValid){
             Toast.makeText(getApplicationContext(),"Login successfully!", Toast.LENGTH_SHORT).show();
+            Intent in = new Intent(getApplicationContext(),Timer.class);
+            startActivity(in);
         }
-    }
+    }*/
 }

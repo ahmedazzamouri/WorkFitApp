@@ -1,4 +1,6 @@
 package com.example.workfitapplication;
 
-public class RegisterActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class RegisterActivity extends AppCompatActivity {
 }

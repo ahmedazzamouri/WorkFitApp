@@ -12,10 +12,12 @@
         android:theme="@style/Theme.WorkFitApplication">
         <activity android:name=".ThreeDaySplitActivity"/>
         <activity android:name=".FourDaySplitActivity"/>
+        <activity android:name=".FiveDaySplitActivity"/>
         <activity android:name=".SixDaySplitActivity"/>
         <activity android:name=".DaySplits"/>
         <activity android:name=".StepCountActivity"/>
         <activity android:name=".HomePage"/>
+        <activity android:name="RegisterActivity"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
