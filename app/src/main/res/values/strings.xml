@@ -29,6 +29,11 @@
     <string name="register_password">Your password</string>
     <string name="register_confirm_password">Confirm your password</string>
     <string name="button_right_desc">Click for Register</string>
+    <string name="name_error">Please enter your name</string>
+    <string name="register_invalid_email">This email address is invalid</string>
+    <string name="register_password_error">Please enter a password</string>
+    <string name="register_email_error">Please enter your email address</string>
+    <string name="register_error_invalid_password">Please enter a minimum password of 6 characters</string>
 
     <string name="workout_timer">Workout Timer</string>
     <string name="calorie_calculator">Calorie Calculator</string>

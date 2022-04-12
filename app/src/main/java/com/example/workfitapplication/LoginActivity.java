@@ -34,8 +34,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 setValidation();
-                //Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                //startActivity(intent);
             }
         });
 
@@ -72,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (isEmailValid && isPasswordValid){
             Toast.makeText(getApplicationContext(),"Login successfully!", Toast.LENGTH_SHORT).show();
-            Intent in = new Intent(getApplicationContext(),RegisterActivity.class);
+            Intent in = new Intent(getApplicationContext(),MainActivity.class);
             startActivity(in);
         }
     }
