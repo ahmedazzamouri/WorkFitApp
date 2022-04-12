@@ -172,10 +172,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/protein" />
+        app:layout_constraintTop_toBottomOf="@+id/protein"/>
 
     <TextView
-        android:id="@+id/cal_maintain1"
+        android:id="@+id/fats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -184,7 +184,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carbs" />
+        app:layout_constraintTop_toBottomOf="@+id/carbs"/>
 
     <TextView
         android:id="@+id/calculator_title"
@@ -198,7 +198,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editAge"
@@ -208,13 +208,14 @@
         android:ems="10"
         android:hint="@string/enter_age"
         android:textSize="12sp"
+        android:fontFamily="@font/baloo"
         android:inputType="number|numberDecimal"
         android:singleLine="true"
         android:textColorHint="#000"
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/editHeight"
@@ -222,6 +223,7 @@
         android:layout_height="34dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:fontFamily="@font/baloo"
         android:hint="@string/enter_height_in_cm"
         android:inputType="number|numberDecimal"
         android:singleLine="true"
@@ -230,13 +232,14 @@
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAge" />
+        app:layout_constraintTop_toBottomOf="@+id/editAge"/>
 
     <EditText
         android:id="@+id/editWeight"
         android:layout_width="219dp"
         android:layout_height="34dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/baloo"
         android:ems="10"
         android:hint="@string/enter_weight_in_kg"
         android:inputType="number|numberDecimal"
@@ -246,10 +249,31 @@
         android:gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editHeight" />
+        app:layout_constraintTop_toBottomOf="@+id/editHeight"/>
 
+    <TextView
+        android:id="@+id/enter_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/baloo"
+        android:gravity="center_horizontal"
+        android:text="@string/edit_gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
-
+    <Spinner
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:entries="array/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

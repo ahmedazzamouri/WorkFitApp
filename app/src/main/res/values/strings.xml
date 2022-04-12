@@ -69,6 +69,12 @@
     <string name="enter_age">Enter Age</string>
     <string name="enter_height_in_cm">Enter Height in cm</string>
     <string name="enter_weight_in_kg">Enter Weight in Kg</string>
+    <string name="edit_gender">Enter your gender:</string>
+    <array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+
 
     ######################DAY SPLITS###############################
     <string name="workout_splis">Workout Days Split</string>
