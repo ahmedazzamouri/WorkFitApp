@@ -46,15 +46,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent1);
         }
         else if (id == R.id.nav_profile){
-            //Intent intent2 = new Intent(MainActivity.this, UserProfile.class);
-            //startActivity(intent2);
+            Intent intent2 = new Intent(MainActivity.this, UserProfile.class);
+            startActivity(intent2);
         }
         else if (id == R.id.nav_splits){
             Intent intent3 = new Intent(MainActivity.this, DaySplits.class);
             startActivity(intent3);
+        } else if (id == R.id.nav_calc_calorie){
+            Intent intent4 = new Intent(MainActivity.this, CalorieRecommendation.class);
+            startActivity(intent4);
+        } else if (id == R.id.nav_steps){
+            Intent intent5 = new Intent(MainActivity.this,StepCountActivity.class);
+            startActivity(intent5);
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

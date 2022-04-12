@@ -35,11 +35,16 @@
     <string name="register_email_error">Please enter your email address</string>
     <string name="register_error_invalid_password">Please enter a minimum password of 6 characters</string>
 
+
+    #####################ACTION BAR DRAWER######################
     <string name="workout_timer">Workout Timer</string>
     <string name="calorie_calculator">Calorie Calculator</string>
     <string name="training_splits">Training Splits</string>
     <string name="settings">Settings</string>
     <string name="user_profile">User Profile</string>
+    <string name="step_count">Step Count</string>
+
+    ######################TIMER##################################
     <string name="text_timer">00:00</string>
     <string name="start_timer">START</string>
     <string name="reset_timer">RESET</string>
@@ -49,6 +54,23 @@
     <string name="timer_description">Workout countdown timer</string>
     <string name="clock_hint">Minutes</string>
 
+    #######################CALORIE CALCULATOR########################
+    <string name="calc_title">Calorie Calculator</string>
+    <string name="calc_calorie">Calculate</string>
+    <string name="calorie_intake">Calorie Intake in Kcal</string>
+    <string name="calculator">---------------</string>
+    <string name="cal_macros">Macros</string>
+    <string name="maintenance">Maintenance:</string>
+    <string name="bulk">Bulk:</string>
+    <string name="cut">Cut:</string>
+    <string name="macros_protein">Protein:</string>
+    <string name="macros_carbs">Carbs:</string>
+    <string name="macros_fats">Fats:</string>
+    <string name="enter_age">Enter Age</string>
+    <string name="enter_height_in_cm">Enter Height in cm</string>
+    <string name="enter_weight_in_kg">Enter Weight in Kg</string>
+
+    ######################DAY SPLITS###############################
     <string name="workout_splis">Workout Days Split</string>
     <string name="worktou_splits_3days">3 days</string>
     <string name="worktou_splits_4days">4 days</string>
@@ -56,6 +78,7 @@
     <string name="worktou_splits_6days">6 days</string>
     <string name="go_button">Go!</string>
 
+    #######################3 DAY SPLIT##############################
     <string name="three_day_split">3 Day Split</string>
     <string name="three_day_split_day1">Day 1:</string>
     <string name="three_day_split_day2">Day 2:</string>
@@ -73,6 +96,7 @@
     <string name="four_day_split_day3">Day 3:</string>
     <string name="four_day_split_day4">Day 4:</string>
 
+    ########################5 DAY SPLIT#################################
     <string name="five_day_split">5 Day Split</string>
     <string name="five_day_split_day1">Day 1:</string>
     <string name="five_day_split_day2">Day 2:</string>

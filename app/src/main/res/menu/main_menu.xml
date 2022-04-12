@@ -8,6 +8,9 @@
         android:title="@string/user_profile"/>
 
     <item
+        android:id="@+id/nav_steps"
+        android:title="@string/step_count"/>
+    <item
         android:id ="@+id/nav_calc_calorie"
         android:title="@string/calorie_calculator"/>
 
