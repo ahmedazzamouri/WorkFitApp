@@ -10,6 +10,30 @@
     <string name="better">Better Yourself Each Day</string>
     <string name="home_page_msg">We hope you make an optimum use\n of the app for your gains</string>
 
+    <string name="name">Name</string>
+    <string name="namedefault">None</string>
+    <string name="email">E-mail</string>
+    <string name="emaildefault">ahmedazzamouri@gmail.com</string>
+    <string-array name="listArray">
+        <item>Only when on Wi-Fi</item>
+        <item>On any network</item>
+    </string-array>
+    <string-array name="listValues">
+        <item>Wi-Fi</item>
+        <item>Any</item>
+    </string-array>
+
+    <string name="lost_connection">Connexion lost.</string>
+    <string name="wifi_connected">Wi-Fi reconnected.</string>
+    <string name="connection_error">Unable to load content. Check your network connection.</string>
+    <string name="xml_error">Error parsing XML.</string>
+    <string name="noInternet">Problems with Internet connection</string>
+    <string name="noWifiErrorMessage">You have Tens activat la opcio de solament Wi-fi pero no es detecta cap connexió WI-Fi operativa</string>
+    <string name="noWifinoInternet">No s\'ha detectat cap tipus de connexio en el teu dispositiu. Activa-la per poder utilitzar-la</string>
+    <string name="refresh">Refrescar</string>
+    <string name="connection_enabled">Connexio activa</string>
+
+
     ######################LOGIN#############################
     <string name="tv_login">Login</string>
     <string name="login_email">Email</string>
@@ -71,6 +95,7 @@
     <string name="enter_height_in_cm">Enter Height in cm</string>
     <string name="enter_weight_in_kg">Enter Weight in Kg</string>
     <string name="edit_gender">Enter your gender:</string>
+
     <array name="gender">
         <item>Male</item>
         <item>Female</item>

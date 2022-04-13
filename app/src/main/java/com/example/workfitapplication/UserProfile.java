@@ -1,4 +1,6 @@
 package com.example.workfitapplication;
 
-public class UserProfile {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class UserProfile extends AppCompatActivity {
 }

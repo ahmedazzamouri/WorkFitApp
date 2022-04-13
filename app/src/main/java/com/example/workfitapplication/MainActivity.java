@@ -1,15 +1,32 @@
 package com.example.workfitapplication;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
+import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -19,6 +36,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     NavigationView nv;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
+    public static final String WIFI = "Wi-Fi";
+    public static final String ANY = "Any";
+    private static SharedPreferences sharedPrefs;
+    private static boolean wifiConnected = false;
+    private static boolean mobileConnected = false;
+    public static String sPref = null;
+    private MainActivity.NetworkReceiver receiver = new NetworkReceiver();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -36,6 +61,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         nv.setNavigationItemSelectedListener(this);
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkReceiver();
+        this.registerReceiver(receiver, filter);
+
+        if (Build.VERSION.SDK_INT >= 23)
+            if (! checkPermissions())
+                requestPermissions();
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,9 +91,111 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_steps){
             Intent intent5 = new Intent(MainActivity.this,StepCountActivity.class);
             startActivity(intent5);
+        } else if (id == R.id.settings){
+            //Intent intent6 = new Intent(MainActivity.this, Settings.class);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public Activity activeInternet() {
+
+        Activity selectedActivity = null;
+
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        sPref = sharedPrefs.getString("listPref", "Wi-Fi");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            updateConnectedFlags();
+        }
+
+        if (((sPref.equals(ANY)) && (wifiConnected || mobileConnected)) || ((sPref.equals(WIFI)) && (wifiConnected))) {
+            selectedActivity = new MainActivity();
+        } else {
+            selectedActivity = new ErrorInternetActivity();
+        }
+
+        return selectedActivity;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onStart() {
+        super.onStart();
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        sPref = sharedPrefs.getString("listPref", "Wi-Fi");
+        updateConnectedFlags();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (receiver != null) {
+            this.unregisterReceiver(receiver);
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void updateConnectedFlags() {
+        ConnectivityManager cMgr =
+                (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        Network nw = cMgr.getActiveNetwork();
+        if (nw == null) {
+            wifiConnected = false;
+            mobileConnected = false;
+        } else {
+            NetworkCapabilities actNw = cMgr.getNetworkCapabilities(nw);
+            if (actNw == null) {
+                wifiConnected = false;
+                mobileConnected = false;
+            } else if (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET))
+                wifiConnected = true;
+            else if (actNw.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))
+                mobileConnected = true;
+        }
+    }
+
+
+    public static class NetworkReceiver extends BroadcastReceiver {
+
+        @RequiresApi(api = Build.VERSION_CODES.M)
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            sPref = sharedPrefs.getString("listPref", "Wi-Fi");
+            Network nw = connMgr.getActiveNetwork();
+            if (nw == null) {
+                Toast.makeText(context, R.string.lost_connection, Toast.LENGTH_SHORT).show();
+            } else {
+                NetworkCapabilities actNw = connMgr.getNetworkCapabilities(nw);
+                if (actNw == null) {
+                    Toast.makeText(context, R.string.lost_connection, Toast.LENGTH_SHORT).show();
+                } else if (WIFI.equals(sPref) && (actNw.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || actNw.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET))) {
+                    Toast.makeText(context, R.string.wifi_connected, Toast.LENGTH_SHORT).show();
+                } else if (ANY.equals(sPref))
+                    Toast.makeText(context, R.string.connection_enabled, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+    private boolean checkPermissions() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ActivityCompat.checkSelfPermission(getApplicationContext(),
+                    Manifest.permission.INTERNET) ==
+                    PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(),
+                    Manifest.permission.ACCESS_NETWORK_STATE) ==
+                    PackageManager.PERMISSION_GRANTED)
+                return true;
+            else
+                return false;
+        } else
+            return true;
+    }
+
+    private void requestPermissions() {
+        ActivityCompat.requestPermissions(MainActivity.this,
+                new String[]{Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE,},
+                0);
     }
 }
