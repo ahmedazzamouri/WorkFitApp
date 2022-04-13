@@ -8,6 +8,7 @@
     android:background="@color/colorPrimary">
 
     <ImageView
+        android:id="@+id/profile_photo"
         android:layout_width="152dp"
         android:layout_height="152dp"
         android:layout_marginTop="88dp"
@@ -20,55 +21,68 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="356dp"
         android:fontFamily="@font/baloo"
         android:text="@string/name"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="313dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.216"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="356dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/namedefault"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="313dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="408dp"
         android:fontFamily="@font/baloo"
         android:text="@string/email"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="374dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="408dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/emaildefault"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="377dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.928"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="452dp"
         android:fontFamily="@font/baloo"
         android:text="Split Day Workout"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="442dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/four_day_split"
+        android:layout_marginTop="452dp"
         android:fontFamily="@font/roboto_regular"
-        tools:layout_editor_absoluteX="215dp"
-        tools:layout_editor_absoluteY="445dp"
-        tools:ignore="MissingConstraints" />
+        android:text="@string/four_day_split"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.686"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

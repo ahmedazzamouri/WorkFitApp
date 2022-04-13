@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         receiver = new NetworkReceiver();
         this.registerReceiver(receiver, filter);
-        activeInternet();
 
         if (Build.VERSION.SDK_INT >= 23)
             if (! checkPermissions())
@@ -95,23 +94,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void activeInternet() {
-
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        sPref = sharedPrefs.getString("listPref", "Wi-Fi");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            updateConnectedFlags();
-        }
-
-        if (((sPref.equals(ANY)) && (wifiConnected || mobileConnected)) || ((sPref.equals(WIFI)) && (wifiConnected))) {
-            Intent intent = new Intent(MainActivity.this, MainActivity.class);
-            startActivity(intent);
-        } else {
-            Intent intent = new Intent(MainActivity.this, ErrorInternetActivity.class);
-            startActivity(intent);
-        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
