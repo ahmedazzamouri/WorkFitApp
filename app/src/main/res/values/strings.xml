@@ -11,7 +11,7 @@
     <string name="home_page_msg">We hope you make an optimum use\n of the app for your gains</string>
 
     <string name="name">Name</string>
-    <string name="namedefault">None</string>
+    <string name="namedefault">Ahmed</string>
     <string name="email">E-mail</string>
     <string name="emaildefault">ahmedazzamouri@gmail.com</string>
     <string-array name="listArray">

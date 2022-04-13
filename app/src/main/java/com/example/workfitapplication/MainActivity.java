@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         receiver = new NetworkReceiver();
         this.registerReceiver(receiver, filter);
+        activeInternet();
 
         if (Build.VERSION.SDK_INT >= 23)
             if (! checkPermissions())
@@ -88,20 +89,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_calc_calorie){
             Intent intent4 = new Intent(MainActivity.this, CalorieRecommendation.class);
             startActivity(intent4);
-        } else if (id == R.id.nav_steps){
-            Intent intent5 = new Intent(MainActivity.this,StepCountActivity.class);
+        } else if (id == R.id.nav_steps) {
+            Intent intent5 = new Intent(MainActivity.this, StepCountActivity.class);
             startActivity(intent5);
-        } else if (id == R.id.settings){
-            //Intent intent6 = new Intent(MainActivity.this, Settings.class);
         }
-
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public Activity activeInternet() {
-
-        Activity selectedActivity = null;
+    public void activeInternet() {
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         sPref = sharedPrefs.getString("listPref", "Wi-Fi");
@@ -110,20 +106,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (((sPref.equals(ANY)) && (wifiConnected || mobileConnected)) || ((sPref.equals(WIFI)) && (wifiConnected))) {
-            selectedActivity = new MainActivity();
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
         } else {
-            selectedActivity = new ErrorInternetActivity();
+            Intent intent = new Intent(MainActivity.this, ErrorInternetActivity.class);
+            startActivity(intent);
         }
-
-        return selectedActivity;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onStart() {
         super.onStart();
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        sPref = sharedPrefs.getString("listPref", "Wi-Fi");
         updateConnectedFlags();
     }
 
