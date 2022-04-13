@@ -23,8 +23,8 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
 
     SensorManager sensorManager;
 
-    private Sensor myStepCounter;
-    private boolean isCounterSensorPresent;
+    private Sensor myStepCounter, myStepDetector;
+    private boolean isCounterSensorPresent, isDetectorSensosPresent;
     int stepCount = 0;
 
 
@@ -52,8 +52,16 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
             myStepCounter = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
             isCounterSensorPresent = true;
         } else {
-            Toast.makeText(this, "There is no step sensor in your phone",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "There is no step counter sensor in your phone",Toast.LENGTH_SHORT).show();
             isCounterSensorPresent = false;
+        }
+
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null){
+            myStepDetector = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR);
+            isDetectorSensosPresent = true;
+        } else {
+            Toast.makeText(this, "There is no step detector sensor in your phone", Toast.LENGTH_SHORT).show();
+            isDetectorSensosPresent = false;
         }
 
 
@@ -65,12 +73,20 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
         if(sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null){
             sensorManager.registerListener(this, myStepCounter, SensorManager.SENSOR_DELAY_NORMAL);
         }
+
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null){
+            sensorManager.registerListener(this, myStepDetector, SensorManager.SENSOR_DELAY_NORMAL);
+        }
     }
     @Override
     protected void onPause(){
         super.onPause();
         if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) != null){
             sensorManager.unregisterListener(this,myStepCounter);
+        }
+
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR) != null){
+            sensorManager.unregisterListener(this, myStepDetector);
         }
 
     }
@@ -86,7 +102,6 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
         }
 
     }
-
 
 
     @Override
