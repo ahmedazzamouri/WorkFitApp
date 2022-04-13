@@ -34,6 +34,30 @@
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_steps_detect"
+            android:textSize="30sp"
+            android:fontFamily="@font/baloo"
+            android:textStyle="bold"
+            android:id="@+id/step_detector"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_step_count"
+            android:textSize="30sp"
+            android:fontFamily="@font/baloo"
+            android:textStyle="bold"
+            android:id="@+id/steps_detect"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
     </LinearLayout>
 
     <TextView
