@@ -68,17 +68,41 @@ public class CalorieRecommendation extends AppCompatActivity {
         formula6 = 13.8 * weight_user;
         formula = 665.1 + formula6 + formula5;
         result = formula * 1.3;
-        maintenance.setText(String.format("%02f",result));
+        maintenance.setText(String.format("%00f",result));
         bulk_cal = result + 500;
-        bulk.setText(String.format("%02f", bulk_cal));
+        bulk.setText(String.format("%00f", bulk_cal));
         cut_cal = result - 500;
-        cut.setText(String.format("%02f", cut_cal));
+        cut.setText(String.format("%00f", cut_cal));
         protein_gr = (0.4 * result) / 4;
-        protein.setText(String.format("%02f", protein_gr));
+        protein.setText(String.format("%.00f", protein_gr));
         carbs_gr = (0.6 * result) / 4;
-        carbs.setText(String.format("%02f", carbs_gr));
+        carbs.setText(String.format("%.00f", carbs_gr));
         fats_gr = (0.2 * result) / 9;
-        fats.setText(String.format("%02f", fats_gr));
+        fats.setText(String.format("%.00f", fats_gr));
 
+    }
+
+    private void femaleCalc() {
+        double weight_user = Double.parseDouble(weight.getText().toString());
+        double height_user = Double.parseDouble(height.getText().toString());
+        double age_user = Double.parseDouble(age.getText().toString());
+        double formula, formula2, formula4, formula5, formula6, result, bulk_cal, cut_cal, protein_gr, carbs_gr, fats_gr;
+        formula2 = 1.9 * height_user;
+        formula4 = 4.7 * age_user;
+        formula5 = formula2 / formula4;
+        formula6 = 9.6 * weight_user;
+        formula = 665.1 + formula6 + formula5;
+        result = formula * 1.3;
+        maintenance.setText(String.format("%00f", result));
+        bulk_cal = result + 400;
+        bulk.setText(String.format("%00f", bulk_cal));
+        cut_cal = result - 400;
+        cut.setText(String.format("%00f", cut_cal));
+        protein_gr = (0.4 * result) / 4;
+        protein.setText(String.format("%.00f", protein_gr));
+        carbs_gr = (0.6 * result) / 4;
+        carbs.setText(String.format("%.00f", carbs_gr));
+        fats_gr = (0.2 * result) / 9;
+        fats.setText(String.format("%.00f", fats_gr));
     }
 }

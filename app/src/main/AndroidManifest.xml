@@ -16,6 +16,7 @@
         <activity android:name=".DaySplits"/>
         <activity android:name=".StepCountActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".CalorieRecommendation"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">
