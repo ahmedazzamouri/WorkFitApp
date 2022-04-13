@@ -101,6 +101,14 @@
     <string name="four_day_split_day2">Day 2:</string>
     <string name="four_day_split_day3">Day 3:</string>
     <string name="four_day_split_day4">Day 4:</string>
+    <string name="four_day_split_day1workout">Chest/Triceps</string>
+    <string name="four_day_split_day2workout">Back/Biceps</string>
+    <string name="four_day_split_day3workout">Legs</string>
+    <string name="four_day_split_day4workout">Abs/Shoulders</string>
+    <string name="four_day_split_day1exercises">1. Dumbbell Press (3x16)\n 2. Dumbbell Flys (3x12)\n 3. Decline Press (3x18)\n 4. Tricep Extensions (3x12)\n 5. SkullCrushers (3x12)\n 6. Overhead Extensions (3x18)</string>
+    <string name="four_day_split_day2exercises">1. Bicep Curls (3x16)\n 2. Preacher Curls (3x12)\n 3. Incline Curls (3x18)\n 4. Hammer Curls (3x12)\n 5. Lat Rows (3x12)\n 6. Lat Extensions (3x18)</string>
+    <string name="four_day_split_day3exercises">1. Weighted Squats (3x16)\n 2. Reverse Lunges (3x12)\n 3. Side Lunges (3x18)\n 4. Sumo Squats (3x12)</string>
+    <string name="four_day_split_day4exercises">1. Knee Raises (3x16)\n 2. Side Crunches (3x12)\n 3. Arnold Press (3x18)\n 4. Military Press (3x12)</string>
 
     ########################5 DAY SPLIT#################################
     <string name="five_day_split">5 Day Split</string>

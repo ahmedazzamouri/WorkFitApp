@@ -50,13 +50,6 @@
             android:layout_height="70dp"
             android:text="@string/worktou_splits_5days"
             android:textSize="20sp"/>
-        <RadioButton
-            android:id="@+id/bttn4"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:text="@string/worktou_splits_6days"
-            android:textSize="20sp"/>
-
     </RadioGroup>
 
     <Button

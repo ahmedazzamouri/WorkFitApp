@@ -93,11 +93,11 @@ public class CalorieRecommendation extends AppCompatActivity {
         formula6 = 9.6 * weight_user;
         formula = 665.1 + formula6 + formula5;
         result = formula * 1.3;
-        maintenance.setText(String.format("%00f", result));
+        maintenance.setText(String.format("%.00f", result));
         bulk_cal = result + 400;
-        bulk.setText(String.format("%00f", bulk_cal));
+        bulk.setText(String.format("%.00f", bulk_cal));
         cut_cal = result - 400;
-        cut.setText(String.format("%00f", cut_cal));
+        cut.setText(String.format("%.00f", cut_cal));
         protein_gr = (0.4 * result) / 4;
         protein.setText(String.format("%.00f", protein_gr));
         carbs_gr = (0.6 * result) / 4;

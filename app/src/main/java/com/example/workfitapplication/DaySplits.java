@@ -22,7 +22,6 @@ public class DaySplits extends AppCompatActivity {
         rb1 = findViewById(R.id.bttn1);
         rb2 = findViewById(R.id.bttn2);
         rb3 = findViewById(R.id.bttn3);
-        rb4 = findViewById(R.id.bttn4);
         go = findViewById(R.id.go_bttn);
 
         go.setOnClickListener(new View.OnClickListener() {
@@ -36,9 +35,6 @@ public class DaySplits extends AppCompatActivity {
                     startActivity(intent);
                 } else if (rb3.isChecked()){
                     Intent intent = new Intent(getApplicationContext(),FiveDaySplitActivity.class);
-                    startActivity(intent);
-                } else if (rb4.isChecked()){
-                    Intent intent = new Intent(getApplicationContext(),SixDaySplitActivity.class);
                     startActivity(intent);
                 }
             }
