@@ -1,5 +1,6 @@
 package com.example.workfitapplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -104,5 +105,19 @@ public class CalorieRecommendation extends AppCompatActivity {
         carbs.setText(String.format("%.00f", carbs_gr));
         fats_gr = (0.2 * result) / 9;
         fats.setText(String.format("%.00f", fats_gr));
+    }
+
+    protected void onStop(){
+        super.onStop();
+
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor ed = prefs.edit();
+
+        ed.putString("age", age.toString());
+        ed.putString("height", height.toString());
+        ed.putString("weight", weight.toString());
+        ed.putString("gender", gender.getSelectedItem().toString());
+
+        ed.apply();
     }
 }

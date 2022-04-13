@@ -13,24 +13,45 @@
         android:orientation="vertical">
 
         <TextView
+            android:layout_marginTop="160dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/total_steps_counts"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
+            android:fontFamily="@font/baloo"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_step_count"
             android:textSize="30sp"
+            android:fontFamily="@font/baloo"
             android:textStyle="bold"
             android:id="@+id/steps"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="110dp"
+        android:fontFamily="@font/baloo"
+        android:text="@string/step_count"
+        android:textColor="@color/black"
+        android:textSize="35sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/step_img"
+        android:layout_marginStart="110sp"
+        android:layout_marginTop="170dp"/>
 
 </RelativeLayout>
