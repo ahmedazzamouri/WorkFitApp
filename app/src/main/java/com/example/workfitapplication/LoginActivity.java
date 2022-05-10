@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         finish();
     }
 
-
+    // check if user can log in or not
     private void LoggingUser() {
         String email = inputEmail.getEditText().getText().toString().trim();
         String password = inputPwd.getEditText().getText().toString().trim();
