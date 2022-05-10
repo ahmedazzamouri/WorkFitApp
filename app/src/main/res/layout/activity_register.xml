@@ -99,20 +99,8 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/arrow_left"
-            android:layout_above="@id/swipeLeft"
             android:layout_centerHorizontal="true"
             android:background="@color/colorPrimary"
             android:contentDescription="@string/button_left_desc" />
-
-        <TextView
-            android:id="@+id/swipeLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/swipe_left_for_login"
-            android:textSize="15sp"
-            android:fontFamily="@font/roboto_regular"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"/>
     </RelativeLayout>
 </LinearLayout>

@@ -69,11 +69,11 @@ public class CalorieRecommendation extends AppCompatActivity {
         formula6 = 13.8 * weight_user;
         formula = 665.1 + formula6 + formula5;
         result = formula * 1.3;
-        maintenance.setText(String.format("%00f",result));
+        maintenance.setText(String.format("%.00f",result));
         bulk_cal = result + 500;
-        bulk.setText(String.format("%00f", bulk_cal));
+        bulk.setText(String.format("%.00f", bulk_cal));
         cut_cal = result - 500;
-        cut.setText(String.format("%00f", cut_cal));
+        cut.setText(String.format("%.00f", cut_cal));
         protein_gr = (0.4 * result) / 4;
         protein.setText(String.format("%.00f", protein_gr));
         carbs_gr = (0.6 * result) / 4;
@@ -105,19 +105,5 @@ public class CalorieRecommendation extends AppCompatActivity {
         carbs.setText(String.format("%.00f", carbs_gr));
         fats_gr = (0.2 * result) / 9;
         fats.setText(String.format("%.00f", fats_gr));
-    }
-
-    protected void onStop(){
-        super.onStop();
-
-        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
-        SharedPreferences.Editor ed = prefs.edit();
-
-        ed.putString("age", age.toString());
-        ed.putString("height", height.toString());
-        ed.putString("weight", weight.toString());
-        ed.putString("gender", gender.getSelectedItem().toString());
-
-        ed.apply();
     }
 }

@@ -10,4 +10,5 @@
     <color name="colorPrimary">#FF5A25</color>
     <color name="colorPrimaryDark">#973010</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="ErrorTextColor">#B00020</color>
 </resources>

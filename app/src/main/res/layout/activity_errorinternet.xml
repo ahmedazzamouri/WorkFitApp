@@ -17,6 +17,6 @@
 
         android:fontFamily="sans-serif-black"
         android:gravity="center_vertical"
-        android:text="@string/noInternet"
+        android:text="Problems with Internet connection"
         android:textSize="20dp" />
 </RelativeLayout>

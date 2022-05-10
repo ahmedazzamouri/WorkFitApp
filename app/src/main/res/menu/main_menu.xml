@@ -2,23 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_timer"
+        android:enabled="true"
         android:title="@string/workout_timer"/>
     <item
         android:id="@+id/nav_profile"
+        android:enabled="true"
         android:title="@string/user_profile"/>
 
     <item
         android:id="@+id/nav_steps"
+        android:enabled="true"
         android:title="@string/step_count"/>
     <item
         android:id ="@+id/nav_calc_calorie"
+        android:enabled="true"
         android:title="@string/calorie_calculator"/>
 
     <item
         android:id="@+id/nav_splits"
+        android:enabled="true"
         android:title="@string/training_splits"/>
     <item
         android:id="@+id/settings"
+        android:enabled="true"
         android:title="@string/settings"/>
 
 </menu>

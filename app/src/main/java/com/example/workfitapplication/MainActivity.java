@@ -28,11 +28,20 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    Toolbar toolbar;
+    private FirebaseAuth mAuth;
+    private Toolbar toolbar;
     NavigationView nv;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
@@ -43,12 +52,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static boolean mobileConnected = false;
     public static String sPref = null;
     private MainActivity.NetworkReceiver receiver = new NetworkReceiver();
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mDatabase;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.EmailBuilder().build(),
+                new AuthUI.IdpConfig.GoogleBuilder().build()
+        );
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,10 +81,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         receiver = new NetworkReceiver();
         this.registerReceiver(receiver, filter);
-
         if (Build.VERSION.SDK_INT >= 23)
             if (! checkPermissions())
                 requestPermissions();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 5){
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+            if (resultCode == RESULT_OK){
+                FirebaseUser user = mAuth.getCurrentUser();
+            }
+        }
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -88,20 +114,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_calc_calorie){
             Intent intent4 = new Intent(MainActivity.this, CalorieRecommendation.class);
             startActivity(intent4);
-        } else if (id == R.id.nav_steps){
-            Intent intent5 = new Intent(MainActivity.this,StepCountActivity.class);
+        } else if (id == R.id.nav_steps) {
+            Intent intent5 = new Intent(MainActivity.this, StepCountActivity.class);
             startActivity(intent5);
-        } else if (id == R.id.settings){
-            //Intent intent6 = new Intent(MainActivity.this, Settings.class);
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public Activity activeInternet() {
+    public Fragment activeInternet() {
 
-        Activity selectedActivity = null;
+        Fragment selectedFragment = null;
 
         sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         sPref = sharedPrefs.getString("listPref", "Wi-Fi");
@@ -110,12 +134,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (((sPref.equals(ANY)) && (wifiConnected || mobileConnected)) || ((sPref.equals(WIFI)) && (wifiConnected))) {
-            selectedActivity = new MainActivity();
+            selectedFragment = new HomeFragment();
         } else {
-            selectedActivity = new ErrorInternetActivity();
+            selectedFragment = new ErrorInternetFragment();
         }
 
-        return selectedActivity;
+        return selectedFragment;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)

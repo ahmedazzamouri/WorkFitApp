@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:orientation="horizontal"
+    app:contentInsetStartWithNavigation="0dp"
+    app:titleTextColor="@color/black">
+
+    <ImageView
+        android:id="@+id/toolbar_logo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/logo"
+        android:visibility="gone"
+        app:tint="@color/black" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/toolbar_user_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/default_user_image"
+        android:layout_gravity="end">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+    <ImageButton
+        android:id="@+id/toolbar_profile_edit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/profile_edit_icon"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_gravity="end"
+        android:layout_marginEnd="15dp"
+        android:visibility="gone"/>
+
+
+
+</androidx.appcompat.widget.Toolbar>

@@ -2,100 +2,111 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimary"
     tools:context=".LoginActivity">
 
 
-    <ImageView
-        android:id="@+id/app_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"/>
+    <include
+        android:id="@+id/main_toolbar"
+        layout="@layout/toolbar_layout"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/main_toolbar"/>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_toolbar"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/logo_login"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/logo"
+                    app:tint="@color/black"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/error_appearance">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/error_appearance"
+                app:passwordToggleEnabled="true">
+                
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/login_pwd"
+                    android:inputType="textPassword"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            
+            <Button
+                android:id="@+id/login_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_button"
+                android:text="@string/tv_login"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
-        android:id="@+id/login_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/app_logo"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="-48dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="@font/indigo_daisy"
-        android:text="@string/tv_login"
-        android:textSize="50sp" />
-
-    <EditText
-        android:id="@+id/login_email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/login_tv"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="-155dp"
-        android:background="@drawable/edittext_custom"
-        android:fontFamily="@font/roboto_regular"
-        android:hint="@string/login_email"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        android:textSize="15sp"
-        android:textColor="@color/black"/>
-
-    <EditText
-        android:id="@+id/login_pwd"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_above="@+id/login_email"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="75dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="-110dp"
-        android:background="@drawable/edittext_custom"
-        android:fontFamily="@font/roboto_regular"
-        android:hint="@string/login_pwd"
-        android:inputType="textPassword"
-        android:padding="15dp"
-        android:textSize="15sp"
-        android:textColor="@color/black"/>
-
-    <Button
-        android:id="@+id/login_bttn"
+        android:id="@+id/register_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login_pwd"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginRight="20dp"
-        android:backgroundTint="@color/black"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/tv_login"
-        android:textColor="@color/colorPrimary" />
-
-    <ImageButton
-        android:id="@+id/register_button"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_above="@+id/swipe_right"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/arrow_right"
-        android:background="@color/colorPrimary"
-        android:contentDescription="@string/button_right_desc" />
-
-    <TextView
-        android:id="@+id/swipe_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/swipe_right_for_register"
-        android:textSize="15sp"
-        android:fontFamily="@font/roboto_regular"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"/>
-
-
+        android:layout_marginBottom="20dp"
+        android:padding="5dp"
+        android:text="@string/create_account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
 </RelativeLayout>

@@ -23,23 +23,17 @@
         <item>Any</item>
     </string-array>
 
-    <string name="lost_connection">Connexion lost.</string>
+    <string name="lost_connection">Connection lost.</string>
     <string name="wifi_connected">Wi-Fi reconnected.</string>
     <string name="connection_error">Unable to load content. Check your network connection.</string>
-    <string name="xml_error">Error parsing XML.</string>
-    <string name="noInternet">Problems with Internet connection</string>
-    <string name="noWifiErrorMessage">You have Tens activat la opcio de solament Wi-fi pero no es detecta cap connexió WI-Fi operativa</string>
-    <string name="noWifinoInternet">No s\'ha detectat cap tipus de connexio en el teu dispositiu. Activa-la per poder utilitzar-la</string>
-    <string name="refresh">Refrescar</string>
-    <string name="connection_enabled">Connexio activa</string>
+    <string name="connection_enabled">Active connection</string>
 
 
     ######################LOGIN#############################
     <string name="tv_login">Login</string>
     <string name="login_email">Email</string>
     <string name="login_pwd">Password</string>
-    <string name="swipe_left_for_login">Click for Login</string>
-    <string name="swipe_right_for_register">Click for Register</string>
+    <string name="create_account">Dont have an account? SIGN UP FREE</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="password_error">Please enter a password</string>
     <string name="email_error">Please enter your email address</string>
@@ -153,6 +147,8 @@
     <string name="five_day_split_day3exercises">1. Arnold Press (4x12)\n 2. Military Press (4x12)\n 3. Cable Pull Downs (4x12)\n 4. SkullCrushers (4x12)\n 5. Close Grip Pushups (4x12)\n 6. Close Grip Bench Press (4x12)</string>
     <string name="five_day_split_day4exercises">1. Leg Extensions (3x12)\n 2. Leg Curls (3x12)\n 3. Sumo Squats (3x12)\n 4. Squats (3x12)\n 5. Side Steps (3x12)\n 6. Reverse Lunges (3x12)\n 7. Preacher Curls (3x12)\n 8. Bicep Curls (3x12)\n 9. Concentration Curls (3x12)\n 10. Hammer Curls (3x12)</string>
     <string name="five_day_split_day5exercises">1. Planks (4x30s)\n 2. Burpees (4x60s)\n 3. Reverse Crunches (4x30s)\n 5. Running (20min)\n 6. Jogging(10min)\n 7. Interval Jumping Jacks (4x30s)\n 8.Bodyweight Squats (4x12)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
