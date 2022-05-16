@@ -27,6 +27,8 @@
     <string name="wifi_connected">Wi-Fi reconnected.</string>
     <string name="connection_error">Unable to load content. Check your network connection.</string>
     <string name="connection_enabled">Active connection</string>
+    <string name="noWifiErrorMsg">You have the Wi-fi only option activated but there is no Wi-fi connection available</string>
+    <string name="noConnection">There\'s no type of connection available in ur device. Activate to use it</string>
 
 
     ######################LOGIN#############################

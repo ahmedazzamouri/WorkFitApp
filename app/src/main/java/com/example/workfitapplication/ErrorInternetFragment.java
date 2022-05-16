@@ -44,9 +44,9 @@ public class ErrorInternetFragment extends Fragment {
 
         if(net == null)
         if(!actNet.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)){
-            //errorMsg.append();
+            errorMsg.append(". " + this.getResources().getString(R.string.noWifiErrorMsg));
         } else if (!actNet.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)){
-            //errorMsg.append();
+            errorMsg.append(". " + this.getResources().getString(R.string.noConnection));
         }
     }
 }

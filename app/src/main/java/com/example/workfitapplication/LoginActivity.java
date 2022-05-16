@@ -29,6 +29,7 @@ import com.firebase.ui.auth.AuthUI;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -71,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(createAccountIntent);
         finish();
     }
+
 
     // check if user can log in or not
     private void LoggingUser() {
