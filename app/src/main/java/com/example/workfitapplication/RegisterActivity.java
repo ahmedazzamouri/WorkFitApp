@@ -165,7 +165,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void AddDetailsToDatabase() {
 
         currentUserID = firebaseAuth.getCurrentUser().getUid();
-        userDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserID);
+        userDatabaseReference = FirebaseDatabase.getInstance("https://workfitapplication-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(currentUserID);
 
         String joinedDate = new SimpleDateFormat("dd MM yyyy", Locale.getDefault()).format(new Date());
 
@@ -206,7 +206,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void SendUserToHomePage() {
-        Intent setupIntent = new Intent(RegisterActivity.this, HomeFragment.class);
+        Intent setupIntent = new Intent(RegisterActivity.this, MainActivity.class);
         setupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         setupIntent.putExtra("IntentFrom", "CreateAccountActivity");
         startActivity(setupIntent);

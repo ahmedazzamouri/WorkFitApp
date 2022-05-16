@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "949322888142",
+    "firebase_url": "https://workfitapplication-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "workfitapplication",
     "storage_bucket": "workfitapplication.appspot.com"
   },

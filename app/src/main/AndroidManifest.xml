@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkFitApplication">
-        <activity android:name=".ErrorInternetActivity"/>
         <activity android:name=".FiveDaySplitActivity"/>
         <activity android:name=".ThreeDaySplitActivity"/>
         <activity android:name=".FourDaySplitActivity"/>

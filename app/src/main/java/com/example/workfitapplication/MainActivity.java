@@ -99,13 +99,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-
+        Fragment selectedFragment = null;
         if (id == R.id.nav_timer){
             Intent intent1 = new Intent(MainActivity.this, Timer.class);
             startActivity(intent1);
         }
         else if (id == R.id.nav_profile){
-            Intent intent2 = new Intent(MainActivity.this, UserProfile.class);
+            Intent intent2 = new Intent(MainActivity.this, HomeFragment.class);
             startActivity(intent2);
         }
         else if (id == R.id.nav_splits){
