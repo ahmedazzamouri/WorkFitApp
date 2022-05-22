@@ -14,7 +14,10 @@
     <string name="namedefault">Ahmed</string>
     <string name="email">E-mail</string>
     <string name="emaildefault">ahmedazzamouri@gmail.com</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
     <string-array name="listArray">
+
         <item>Only when on Wi-Fi</item>
         <item>On any network</item>
     </string-array>
@@ -149,8 +152,6 @@
     <string name="five_day_split_day3exercises">1. Arnold Press (4x12)\n 2. Military Press (4x12)\n 3. Cable Pull Downs (4x12)\n 4. SkullCrushers (4x12)\n 5. Close Grip Pushups (4x12)\n 6. Close Grip Bench Press (4x12)</string>
     <string name="five_day_split_day4exercises">1. Leg Extensions (3x12)\n 2. Leg Curls (3x12)\n 3. Sumo Squats (3x12)\n 4. Squats (3x12)\n 5. Side Steps (3x12)\n 6. Reverse Lunges (3x12)\n 7. Preacher Curls (3x12)\n 8. Bicep Curls (3x12)\n 9. Concentration Curls (3x12)\n 10. Hammer Curls (3x12)</string>
     <string name="five_day_split_day5exercises">1. Planks (4x30s)\n 2. Burpees (4x60s)\n 3. Reverse Crunches (4x30s)\n 5. Running (20min)\n 6. Jogging(10min)\n 7. Interval Jumping Jacks (4x30s)\n 8.Bodyweight Squats (4x12)</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
