@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         Fragment selectedFragment = null;
-
+        
         if (id == R.id.nav_timer){
             Intent intent1 = new Intent(MainActivity.this, Timer.class);
             startActivity(intent1);

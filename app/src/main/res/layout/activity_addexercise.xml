@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:text="Exercise Name"
+                android:gravity="center"/>
+            
+            <EditText
+                android:id="@+id/nameExercise"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:inputType="text"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:text="Nº series"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/n_series"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:inputType="number"/>
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+            
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:text="Nº repetitions"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/n_repetitions"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:inputType="number"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:text="Type of exercise"
+                android:gravity="center"/>
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:entries="@array/type_exercise"/>
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/createExerciseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:text="Create Exercise"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
