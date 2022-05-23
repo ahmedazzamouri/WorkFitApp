@@ -65,6 +65,16 @@
     <string name="terms_service">By clicking on Create Account, you agree to our Terms of Services and Privacy Policy.</string>
 
 
+    #################### PROFILE ################################
+
+    <string name="profile_username">Username</string>
+    <string name="profile_email">email</string>
+    <string name="profile_name">name</string>
+    <string name="profile_joined_date">joined date</string>
+    <string name="profile_weight">weight</string>
+    <string name="profile_height">height</string>
+    <string name="profile_phonenumber">phonenumber</string>
+
     #####################ACTION BAR DRAWER######################
     <string name="workout_timer">Workout Timer</string>
     <string name="calorie_calculator">Calorie Calculator</string>
@@ -108,10 +118,9 @@
 
     ######################DAY SPLITS###############################
     <string name="workout_splis">Workout Days Split</string>
-    <string name="worktou_splits_3days">3 days</string>
-    <string name="worktou_splits_4days">4 days</string>
-    <string name="worktou_splits_5days">5 days</string>
-    <string name="worktou_splits_6days">6 days</string>
+    <string name="workout_splits_3days">3 days</string>
+    <string name="workout_splits_4days">4 days</string>
+    <string name="workout_splits_5days">5 days</string>
     <string name="go_button">Go!</string>
 
     #######################3 DAY SPLIT##############################

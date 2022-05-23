@@ -36,19 +36,19 @@
             android:id="@+id/bttn1"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="@string/worktou_splits_3days"
+            android:text="@string/workout_splits_3days"
             android:textSize="20sp"/>
         <RadioButton
             android:id="@+id/bttn2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="@string/worktou_splits_4days"
+            android:text="@string/workout_splits_4days"
             android:textSize="20sp"/>
         <RadioButton
             android:id="@+id/bttn3"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:text="@string/worktou_splits_5days"
+            android:text="@string/workout_splits_5days"
             android:textSize="20sp"/>
     </RadioGroup>
 
