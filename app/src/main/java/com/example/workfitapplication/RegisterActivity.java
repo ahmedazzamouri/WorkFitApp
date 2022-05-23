@@ -43,9 +43,9 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference userDatabaseReference;
 
-    private TextInputLayout registerFullname, registerUsername, registerEmail, registerPwd, registerConfirmPwd;
+    private TextInputLayout registerFullname, registerUsername, registerEmail, registerPwd, registerConfirmPwd, registerWeight, registerHeight,registerPhoneNumber;
     private Button registerBttn;
-    private String name, username, userMail, userPwd, userConfirmPwd;
+    private String name, username, phoneNumber, userMail, userPwd, userConfirmPwd, weight, height;
 
     private ProgressDialog loading;
 
@@ -69,8 +69,11 @@ public class RegisterActivity extends AppCompatActivity {
         registerFullname = findViewById(R.id.register_name);
         registerUsername = findViewById(R.id.register_username);
         registerEmail = findViewById(R.id.register_email);
+        registerPhoneNumber = findViewById(R.id.register_phone);
         registerPwd = findViewById(R.id.register_password);
         registerConfirmPwd = findViewById(R.id.register_confirm_password);
+        registerWeight = findViewById(R.id.register_weight);
+        registerHeight = findViewById(R.id.register_height);
         registerBttn = findViewById(R.id.register_button);
 
         registerBttn.setOnClickListener(view -> RegisterNewUser());
@@ -80,8 +83,11 @@ public class RegisterActivity extends AppCompatActivity {
         name = registerFullname.getEditText().getText().toString();
         username = registerUsername.getEditText().getText().toString();
         userMail = registerEmail.getEditText().getText().toString();
+        phoneNumber = registerPhoneNumber.getEditText().getText().toString();
         userPwd = registerPwd.getEditText().getText().toString();
         userConfirmPwd = registerConfirmPwd.getEditText().getText().toString();
+        weight = registerWeight.getEditText().getText().toString();
+        height = registerHeight.getEditText().getText().toString();
 
         if (TextUtils.isEmpty(name)){
             registerFullname.setError("Please enter your name");
@@ -101,16 +107,35 @@ public class RegisterActivity extends AppCompatActivity {
             registerEmail.setError(null);
         }
 
+        if (TextUtils.isEmpty(phoneNumber)){
+            registerPhoneNumber.setError("Please enter a phone number");
+        } else {
+            registerPhoneNumber.setError(null);
+        }
+
         if (TextUtils.isEmpty(userPwd)){
             registerPwd.setError("Please enter a password");
         } else {
             registerPwd.setError(null);
         }
 
+
         if (TextUtils.isEmpty(userConfirmPwd)){
             registerConfirmPwd.setError("Please confirm the password");
         } else {
             registerConfirmPwd.setError(null);
+        }
+
+        if (TextUtils.isEmpty(weight)){
+            registerWeight.setError("Please enter your weight");
+        } else {
+            registerWeight.setError(null);
+        }
+
+        if (TextUtils.isEmpty(height)){
+            registerHeight.setError("Please enter your height");
+        } else {
+            registerHeight.setError(null);
         }
 
         if (!TextUtils.isEmpty(userPwd) && !TextUtils.isEmpty(userConfirmPwd)){
@@ -122,7 +147,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(username) && !TextUtils.isEmpty(userMail) && !TextUtils.isEmpty(userPwd) && !TextUtils.isEmpty(userConfirmPwd) && userPwd.equals(userConfirmPwd)){
+        if (!TextUtils.isEmpty(name) && !TextUtils.isEmpty(username) && !TextUtils.isEmpty(userMail) && !TextUtils.isEmpty(phoneNumber) && !TextUtils.isEmpty(weight) && !TextUtils.isEmpty(height) &&  !TextUtils.isEmpty(userPwd) && !TextUtils.isEmpty(userConfirmPwd) && userPwd.equals(userConfirmPwd)){
             loading = new ProgressDialog(this);
             String ProgressDialogMessage="Registering...";
             SpannableString spannableMsg = new SpannableString(ProgressDialogMessage);
@@ -171,9 +196,13 @@ public class RegisterActivity extends AppCompatActivity {
 
         HashMap<String, Object> usermap = new HashMap<>();
 
+        usermap.put("user_fullname", name);
         usermap.put("usersearchkeyword", username.toLowerCase());
         usermap.put("username", username);
         usermap.put("useremail", userMail);
+        usermap.put("user_weight", weight);
+        usermap.put("user_height", height);
+        usermap.put("user_phone", phoneNumber);
         usermap.put("userjoineddate", joinedDate);
 
         userDatabaseReference.updateChildren(usermap).addOnCompleteListener(task -> {

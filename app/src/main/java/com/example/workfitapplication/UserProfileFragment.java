@@ -24,17 +24,16 @@ public class UserProfileFragment extends Fragment {
 
     DatabaseReference reference;
     FirebaseUser user;
-    CircleImageView imageView;
-    TextView username;
+    CircleImageView profileUserImage;
+    String userImage, username, joinedDate, weight, height, gender, birthday, email;
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    //@Nullable
+    //@Override
+    /*public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        imageView = view.findViewById(R.id.profile_image);
-        username = view.findViewById(R.id.profile_username);
+        profileUserImage = view.findViewById(R.id.profile_image);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -43,8 +42,10 @@ public class UserProfileFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild("userimage")){
 
-                Users users
+                }
+
 
             }
 
@@ -52,7 +53,7 @@ public class UserProfileFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        })
+        });
 
-    }
+    }*/
 }
