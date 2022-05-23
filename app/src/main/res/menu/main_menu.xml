@@ -3,10 +3,12 @@
     <item
         android:id="@+id/nav_timer"
         android:enabled="true"
+        android:icon="@drawable/default_user_image"
         android:title="@string/workout_timer"/>
     <item
         android:id="@+id/nav_profile"
         android:enabled="true"
+        android:icon="@drawable/profile_edit_icon"
         android:title="@string/user_profile"/>
 
     <item

@@ -106,8 +106,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent1);
         }
         else if (id == R.id.nav_profile){
-            Intent intent2 = new Intent(MainActivity.this, HomeFragment.class);
-            startActivity(intent2);
+            selectedFragment = new UserProfileFragment();
+            //getSupportFragmentManager().beginTransaction().replace(R.id.)
         }
         else if (id == R.id.nav_splits){
             Intent intent3 = new Intent(MainActivity.this, DaySplits.class);

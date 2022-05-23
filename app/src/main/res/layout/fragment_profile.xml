@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     tools:context=".UserProfileFragment">
 
@@ -37,7 +36,7 @@
                     android:orientation="horizontal">
                     
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/profiler_user_image"
+                        android:id="@+id/profile_user_image"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
                         android:src="@drawable/default_user_image"/>
@@ -45,7 +44,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
                         android:orientation="vertical">
                         
                         <TextView
@@ -60,7 +59,7 @@
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/profie_email"
+                            android:id="@+id/profile_email"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@null"
@@ -100,7 +99,7 @@
                             android:id="@+id/profile_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
+                            android:layout_marginStart="2dp"
                             android:text="@string/profile_name"
                             android:textAlignment="center"
                             android:textColor="@color/black"
@@ -141,15 +140,11 @@
                             android:layout_weight="1"
                             android:text="@string/profile_height"
                             android:textColor="@color/colorPrimaryDark"
-                            android:textSize="16sp"
+                            android:textSize="16sp"/>
 
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-            
-
-
-
-
+    </ScrollView>
 </FrameLayout>

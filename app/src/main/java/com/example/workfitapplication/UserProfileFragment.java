@@ -1,13 +1,13 @@
 package com.example.workfitapplication;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,35 +17,111 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserProfileFragment extends Fragment {
 
-    DatabaseReference reference;
-    FirebaseUser user;
-    CircleImageView profileUserImage;
-    String userImage, username, joinedDate, weight, height, gender, birthday, email;
+    private View view;
 
-    //@Nullable
-    //@Override
-    /*public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    private FirebaseAuth mAuth;
+    private DatabaseReference userDatabaseReference;
+    private CircleImageView profileUserImage;
+    String currentUserId;
+    String userImage, username, joinedDate, weight, height, phonenumber, email, name;
+    private TextView profileUsername, profileJoinedDate, profileWeight, profileHeight, profileEmail, profilePhoneNumber, profileName;
 
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+    public UserProfileFragment() {
+        //Required Empty public constructor
+    }
 
-        profileUserImage = view.findViewById(R.id.profile_image);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        currentUserId = mAuth.getCurrentUser().getUid();
+        userDatabaseReference = FirebaseDatabase.getInstance("https://workfitapplication-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("Users").child(currentUserId);
 
-        reference = FirebaseDatabase.getInstance("https://workfitapplication-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users").child(user.getUid());
+        profileUserImage = view.findViewById(R.id.profile_user_image);
+        profileUsername = view.findViewById(R.id.profile_username);
+        profileName = view.findViewById(R.id.profile_name);
+        profileJoinedDate = view.findViewById(R.id.profile_joined_date);
+        profileEmail = view.findViewById(R.id.profile_email);
+        profileHeight = view.findViewById(R.id.profile_height);
+        profileWeight = view.findViewById(R.id.profile_weight);
+        profilePhoneNumber = view.findViewById(R.id.profile_phone);
 
-        reference.addValueEventListener(new ValueEventListener() {
+        RetrieveUserDetails();
+
+        return view;
+    }
+
+    private void RetrieveUserDetails() {
+
+        userDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChild("userimage")){
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()){
+                    if (dataSnapshot.hasChild("userimage")){
+                        userImage = dataSnapshot.child("userimage").getValue().toString();
+                        if (!TextUtils.isEmpty(userImage)){
+                            Picasso.get().load(userImage).placeholder(R.drawable.profile_photo).into(profileUserImage);
+                        }
+                    }
 
+                    if (dataSnapshot.hasChild("username"));{
+                        username = dataSnapshot.child("username").getValue().toString();
+                        if (!TextUtils.isEmpty(username)){
+                            profileUsername.setText(username);
+                        }
+                    }
+
+                    if (dataSnapshot.hasChild("useremail"));{
+                        email = dataSnapshot.child("useremail").getValue().toString();
+                        if (!TextUtils.isEmpty(email)){
+                            profileEmail.setText(email);
+                        }
+                    }
+
+                    if (dataSnapshot.hasChild("userjoineddate"));{
+                        joinedDate = dataSnapshot.child("userjoineddate").getValue().toString();
+                        if (!TextUtils.isEmpty(joinedDate)){
+                            profileJoinedDate.setText("Joined "+joinedDate);
+                        }
+                    }
+
+                    if (dataSnapshot.hasChild("user_fullname"));{
+                        name = dataSnapshot.child("user_fullname").getValue().toString();
+                        if (!TextUtils.isEmpty(name)){
+                            profileName.setText(name);
+                        }
+                    }
+
+                    if (dataSnapshot.hasChild("user_phone"));{
+                        phonenumber = dataSnapshot.child("user_phone").getValue().toString();
+                        if (!TextUtils.isEmpty(phonenumber)){
+                            profilePhoneNumber.setText(phonenumber);
+                        }
+
+                    }
+
+                    if (dataSnapshot.hasChild("user_weight")){
+                        weight = dataSnapshot.child("user_weight").getValue().toString();
+                        if (!TextUtils.isEmpty(weight)){
+                            profileWeight.setText(" • Weight -  "+weight+" kg •");
+                        }
+                    }
+
+                    if (dataSnapshot.hasChild("user_height")){
+                        height = dataSnapshot.child("user_height").getValue().toString();
+                        if (!TextUtils.isEmpty(height)){
+                            profileHeight.setText(" • Height - "+height+" cm •");
+                        }
+                    }
                 }
-
 
             }
 
@@ -54,6 +130,6 @@ public class UserProfileFragment extends Fragment {
 
             }
         });
+    }
 
-    }*/
 }
