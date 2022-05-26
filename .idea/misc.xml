@@ -40,19 +40,26 @@
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_four_day_split.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_home_page.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_login.xml" value="0.3141025641025641" />
-        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_profileuser.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_six_day_split.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_steps.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_three_day_split.xml" value="0.5" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_timer.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_addworkout.xml" value="0.33" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/item_list.xml" value="0.67" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/three_day_split.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/menu/main_menu.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/menu/menu.xml" value="0.2351851851851852" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/xml/editprofile.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

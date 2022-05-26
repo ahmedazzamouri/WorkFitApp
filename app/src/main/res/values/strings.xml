@@ -11,9 +11,10 @@
     <string name="home_page_msg">We hope you make an optimum use\n of the app for your gains</string>
 
     <string name="name">Name</string>
-    <string name="namedefault">Ahmed</string>
+    <string name="namedefault">None</string>
     <string name="email">E-mail</string>
     <string name="emaildefault">ahmedazzamouri@gmail.com</string>
+    <string name="username">Userame</string>
     <string name="weight">Weight</string>
     <string name="height">Height</string>
     <string-array name="listArray">
@@ -75,13 +76,14 @@
     <string name="profile_height">height</string>
     <string name="profile_phonenumber">phonenumber</string>
 
-    #####################ACTION BAR DRAWER######################
+    #####################MENU######################
     <string name="workout_timer">Workout Timer</string>
     <string name="calorie_calculator">Calorie Calculator</string>
     <string name="training_splits">Training Splits</string>
     <string name="settings">Settings</string>
     <string name="user_profile">User Profile</string>
     <string name="step_count">Step Count</string>
+    <string name="configuration">Configuration</string>
 
     ######################TIMER##################################
     <string name="text_timer">00:00</string>

@@ -56,10 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        toolbar = findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
-
-
         toolbarUserImg = findViewById(R.id.toolbar_user_img);
         toolbarUserImg.setVisibility(View.GONE);
 
@@ -170,7 +166,6 @@ public class RegisterActivity extends AppCompatActivity {
                     String msg = task.getException().getMessage();
 
                     final Dialog errorDialog = new Dialog(RegisterActivity.this);
-                    errorDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                     errorDialog.setContentView(R.layout.error_layout);
                     errorDialog.setTitle("Error Window");
                     errorDialog.show();
@@ -218,7 +213,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String msg = task.getException().getMessage();
 
                 final Dialog errorDialog = new Dialog(RegisterActivity.this);
-                errorDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 errorDialog.setContentView(R.layout.error_layout);
                 errorDialog.setTitle("Error Window");
                 errorDialog.show();

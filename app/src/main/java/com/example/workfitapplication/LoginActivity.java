@@ -49,9 +49,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        findViewById(R.id.main_toolbar);
-        setSupportActionBar(toolbar);
-
         toolbarUserImg = findViewById(R.id.toolbar_user_img);
         toolbarUserImg.setVisibility(View.GONE);
 
@@ -114,7 +111,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         String msg = task.getException().getMessage();
                         final Dialog errorDialog = new Dialog(LoginActivity.this);
-                        errorDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                         errorDialog.setContentView(R.layout.error_layout);
                         errorDialog.setTitle("Error Window");
                         errorDialog.show();
@@ -138,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToHome() {
-        Intent main = new Intent(LoginActivity.this, MainActivity.class);
+        Intent main = new Intent(LoginActivity.this, CalorieRecommendation.class);
         main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         main.putExtra("intentFrom", "LoginActivity");
         startActivity(main);

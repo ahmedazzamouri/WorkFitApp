@@ -1,10 +1,13 @@
 package com.example.workfitapplication;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,6 +60,28 @@ public class UserProfileFragment extends Fragment {
         RetrieveUserDetails();
 
         return view;
+    }
+    
+    @Override
+    public void onResume(){
+        super.onResume();
+        buildTitle();
+    }
+
+    private void buildTitle() {
+        TextView name = getActivity().findViewById(R.id.profile_name);
+        TextView email = getActivity().findViewById(R.id.profile_email);
+        TextView username = getActivity().findViewById(R.id.profile_username);
+
+        SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+        String alias = mySharedPreferences.getString(getString(R.string.name), "No name");
+        String mail = mySharedPreferences.getString(getString(R.string.email), "No email");
+        String accountname = mySharedPreferences.getString(getString(R.string.username), "No username");
+
+        name.setText(alias);
+        email.setText(mail);
+        username.setText(accountname);
     }
 
     private void RetrieveUserDetails() {

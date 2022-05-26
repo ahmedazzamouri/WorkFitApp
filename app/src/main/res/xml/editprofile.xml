@@ -8,7 +8,7 @@
         android:title="@string/name"/>
 
     <EditTextPreference
-        android:defaultValue="@string/emaildefault"
+        android:defaultValue="false"
         android:key="@string/email"
         android:maxLength="30"
         android:selectAllOnFocus="true"

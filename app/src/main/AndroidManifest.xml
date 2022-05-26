@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,9 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WorkFitApplication">
-        <activity android:name=".FiveDaySplitActivity"/>
-        <activity android:name=".ThreeDaySplitActivity"/>
-        <activity android:name=".FourDaySplitActivity"/>
+        <activity android:name=".preferences.PreferencesActivity"/>
+        <activity android:name=".ExerciseActivity"/>
         <activity android:name=".DaySplits"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".CalorieRecommendation"/>

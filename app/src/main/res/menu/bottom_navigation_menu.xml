@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeButton"
+        android:enabled="true"
+        android:icon="@android:drawable/btn_star"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/searchButton"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Buscar"/>
+    <item
+        android:id="@+id/addWorkoutButton"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="New Workout"/>
+
+    <item
+        android:id="@+id/stepCounter"
+        android:enabled="true"
+        android:icon="@drawable/step_img"
+        android:title="Step Counter"/>
+    <item
+        android:id="@+id/profileButton"
+        android:enabled="true"
+        android:icon="@drawable/fui_ic_anonymous_white_24dp"
+        android:title="Profile"/>
+</menu>

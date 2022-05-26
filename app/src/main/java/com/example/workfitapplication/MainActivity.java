@@ -11,9 +11,12 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -28,23 +31,27 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import com.example.workfitapplication.preferences.PreferencesActivity;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.auth.User;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.prefs.PreferenceChangeEvent;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 
+    public static Uri photo;
     private FirebaseAuth mAuth;
     private Toolbar toolbar;
-    NavigationView nv;
-    ActionBarDrawerToggle toggle;
-    DrawerLayout drawerLayout;
+    BottomNavigationView bottomNav;
     public static final String WIFI = "Wi-Fi";
     public static final String ANY = "Any";
     private static SharedPreferences sharedPrefs;
@@ -53,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static String sPref = null;
     private MainActivity.NetworkReceiver receiver = new NetworkReceiver();
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private DatabaseReference mDatabase;
+
 
 
     @Override
@@ -61,22 +68,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build()
-        );
+        bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                Fragment selectedFragment = null;
 
-        toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+                if (id == R.id.homeButton) {
+                    selectedFragment = activeInternet();
+                } else if (id == R.id.searchButton) {
+                    selectedFragment = new HomeFragment();
+                } else if (id == R.id.addWorkoutButton) {
+                    selectedFragment = new WorkoutFragment();
 
-        nv = findViewById(R.id.nav_view);
-        drawerLayout = findViewById(R.id.drawer_layout);
+                } else if (id == R.id.stepCounter) {
+                    selectedFragment = new HomeFragment();
+                } else if (id == R.id.profileButton) {
+                    selectedFragment = new UserProfileFragment();
+                }
 
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.Open, R.string.Close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        nv.setNavigationItemSelectedListener(this);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                return true;
+            }
+        });
 
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
         receiver = new NetworkReceiver();
@@ -93,35 +108,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             IdpResponse response = IdpResponse.fromResultIntent(data);
             if (resultCode == RESULT_OK){
                 FirebaseUser user = mAuth.getCurrentUser();
+                setSharedPrefs();
+                Fragment fragment = activeInternet();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                System.out.println("Success");
+            } else {
+                Toast.makeText(this,R.string.login_email, Toast.LENGTH_LONG).show();
+                System.out.println("Fail");
+                finish();
             }
         }
     }
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        Fragment selectedFragment = null;
-        
-        if (id == R.id.nav_timer){
-            Intent intent1 = new Intent(MainActivity.this, Timer.class);
-            startActivity(intent1);
-        }
-        else if (id == R.id.nav_profile){
-            selectedFragment = new UserProfileFragment();
-            //getSupportFragmentManager().beginTransaction().replace(R.id.)
-        }
-        else if (id == R.id.nav_splits){
-            Intent intent3 = new Intent(MainActivity.this, DaySplits.class);
-            startActivity(intent3);
-        } else if (id == R.id.nav_calc_calorie){
-            Intent intent4 = new Intent(MainActivity.this, CalorieRecommendation.class);
-            startActivity(intent4);
-        } else if (id == R.id.nav_steps) {
-            Intent intent5 = new Intent(MainActivity.this, StepCountActivity.class);
-            startActivity(intent5);
-        }
 
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
+    private void setSharedPrefs() {
+        FirebaseUser user = mAuth.getCurrentUser();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("Name", user.getDisplayName());
+        editor.putString("E-mail", user.getEmail());
+        photo = user.getPhotoUrl();
+        editor.apply();
     }
 
     public Fragment activeInternet() {
@@ -181,6 +187,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        Fragment selectedFragment = null;
+
+        if (id == R.id.homeButton) {
+            selectedFragment = activeInternet();
+        } else if (id == R.id.searchButton) {
+            selectedFragment = new HomeFragment();
+        } else if (id == R.id.addWorkoutButton) {
+            selectedFragment = new WorkoutFragment();
+
+        } else if (id == R.id.stepCounter) {
+            selectedFragment = new HomeFragment();
+        } else if (id == R.id.profileButton) {
+            selectedFragment = new UserProfileFragment();
+        }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case R.id.config:
+                startActivity(new Intent(this, PreferencesActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
     public static class NetworkReceiver extends BroadcastReceiver {
 
