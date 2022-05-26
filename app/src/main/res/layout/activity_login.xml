@@ -41,10 +41,10 @@
                 <ImageView
                     android:id="@+id/logo_login"
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    app:srcCompat="@drawable/logo"
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/app_logo"
                     app:tint="@color/black"
-                    android:scaleType="fitCenter"
+                    android:scaleType="centerInside"
                     android:adjustViewBounds="true"
                     android:layout_weight="1"/>
             </LinearLayout>

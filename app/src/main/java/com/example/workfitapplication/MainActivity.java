@@ -40,11 +40,6 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.firestore.auth.User;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.prefs.PreferenceChangeEvent;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 

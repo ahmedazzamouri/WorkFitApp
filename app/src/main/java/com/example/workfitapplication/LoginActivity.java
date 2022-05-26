@@ -134,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToHome() {
-        Intent main = new Intent(LoginActivity.this, CalorieRecommendation.class);
+        Intent main = new Intent(LoginActivity.this, MainActivity.class);
         main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         main.putExtra("intentFrom", "LoginActivity");
         startActivity(main);
