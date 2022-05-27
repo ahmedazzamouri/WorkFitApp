@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
     private static boolean mobileConnected = false;
     public static String sPref = null;
     private MainActivity.NetworkReceiver receiver = new NetworkReceiver();
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
 
 
@@ -217,6 +216,12 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
             case R.id.config:
                 startActivity(new Intent(this, PreferencesActivity.class));
                 return true;
+
+            case R.id.logout:
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                firebaseAuth.signOut();
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
             default:
                 return super.onOptionsItemSelected(item);
         }

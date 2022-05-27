@@ -23,10 +23,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -156,6 +159,20 @@ public class RegisterActivity extends AppCompatActivity {
 
             firebaseAuth.createUserWithEmailAndPassword(userMail, userPwd).addOnCompleteListener(task -> {
                 if (task.isSuccessful()){
+                    FirebaseUser user = firebaseAuth.getCurrentUser();
+                    assert user != null;
+                    user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(RegisterActivity.this,"Email verification link sent", Toast.LENGTH_SHORT).show();
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(RegisterActivity.this, "Something went wrong!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     AddDetailsToDatabase();
                 } else {
                     registerPwd.getEditText().setText("");
