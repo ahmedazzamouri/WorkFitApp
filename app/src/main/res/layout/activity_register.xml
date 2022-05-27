@@ -192,7 +192,7 @@
                 android:paddingRight="20dp"
                 android:text="@string/register"
                 android:textAllCaps="true"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
         </LinearLayout>

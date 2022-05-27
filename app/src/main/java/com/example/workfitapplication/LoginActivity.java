@@ -1,7 +1,9 @@
 package com.example.workfitapplication;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -12,6 +14,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
@@ -41,11 +44,12 @@ public class LoginActivity extends AppCompatActivity {
     private Button login;
     private TextInputLayout inputEmail, inputPwd;
     private TextView registerAccount;
+    private TextView forgotPwd;
 
     private ProgressDialog loading;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -57,13 +61,22 @@ public class LoginActivity extends AppCompatActivity {
         inputEmail = findViewById(R.id.login_email);
         inputPwd = findViewById(R.id.login_password);
 
-        registerAccount= findViewById(R.id.register_account);
+        registerAccount = findViewById(R.id.register_account);
+        forgotPwd = findViewById(R.id.forgotPwd);
+
         login = findViewById(R.id.login_button);
         login.setOnClickListener(view -> LoggingUser());
 
         registerAccount.setOnClickListener(view -> CreateAccountUser());
-    }
+        forgotPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this, "You can reset your password now", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, ForgotPasswordActivity.class));
+            }
+        });
 
+    }
     private void CreateAccountUser() {
         Intent createAccountIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(createAccountIntent);
@@ -98,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
             loading.show();
             loading.setCanceledOnTouchOutside(false);
             loading.setCancelable(false);
+            loading.dismiss();
 
 
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

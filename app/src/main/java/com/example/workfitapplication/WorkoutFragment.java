@@ -74,6 +74,11 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        int id = view.getId();
+        if (id == R.id.addExerciseButton){
+            Intent exerciseIntent = new Intent(getActivity(), ExerciseActivity.class);
+            startActivityForResult(exerciseIntent, 2);
+        }
 
     }
 }

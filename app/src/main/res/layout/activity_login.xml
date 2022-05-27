@@ -82,6 +82,14 @@
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/forgotPwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/password_forgot"
+                android:textColor="@color/black"
+                android:gravity="end"/>
             
             <Button
                 android:id="@+id/login_button"

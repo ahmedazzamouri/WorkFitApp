@@ -44,7 +44,9 @@
     <string name="password_error">Please enter a password</string>
     <string name="email_error">Please enter your email address</string>
     <string name="error_invalid_password">Please enter a minimum password of 6 characters</string>
-    <string name="button_left_desc">Click for Login</string>
+    <string name="password_forgot">Forgot your password?</string>
+    <string name="submit_reset_pwd">Submit</string>
+    <string name="resetPwd">Please enter your email to receive your password reset</string>
 
     ######################REGISTER###########################
 
