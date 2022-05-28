@@ -16,4 +16,9 @@
         <item name="android:textColor">@color/ErrorTextColor</item>
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="Subheader">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

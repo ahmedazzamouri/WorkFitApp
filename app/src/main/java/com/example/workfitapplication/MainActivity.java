@@ -71,13 +71,9 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
                 if (id == R.id.homeButton) {
                     selectedFragment = activeInternet();
-                } else if (id == R.id.searchButton) {
                     selectedFragment = new HomeFragment();
                 } else if (id == R.id.addWorkoutButton) {
                     selectedFragment = new WorkoutFragment();
-
-                } else if (id == R.id.stepCounter) {
-                    selectedFragment = new HomeFragment();
                 } else if (id == R.id.profileButton) {
                     selectedFragment = new UserProfileFragment();
                 }
@@ -188,13 +184,10 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
         if (id == R.id.homeButton) {
             selectedFragment = activeInternet();
-        } else if (id == R.id.searchButton) {
-            selectedFragment = new HomeFragment();
+
         } else if (id == R.id.addWorkoutButton) {
             selectedFragment = new WorkoutFragment();
 
-        } else if (id == R.id.stepCounter) {
-            selectedFragment = new HomeFragment();
         } else if (id == R.id.profileButton) {
             selectedFragment = new UserProfileFragment();
         }

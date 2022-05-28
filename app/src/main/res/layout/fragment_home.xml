@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/colorPrimary">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/workoutList"
         android:layout_width="match_parent"
-        android:layout_height="535dp"/>
+        android:layout_height="535dp"
+        tools:listitem="@layout/item_workout"/>
 
 </RelativeLayout>

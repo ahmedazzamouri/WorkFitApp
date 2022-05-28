@@ -46,8 +46,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
-    private CircleImageView toolbarUserImg;
     private FirebaseAuth mAuth;
     private Button login;
     private TextInputLayout inputEmail, inputPwd;
@@ -62,8 +60,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        toolbarUserImg = findViewById(R.id.toolbar_user_img);
-        toolbarUserImg.setVisibility(View.GONE);
 
         mAuth = FirebaseAuth.getInstance();
 

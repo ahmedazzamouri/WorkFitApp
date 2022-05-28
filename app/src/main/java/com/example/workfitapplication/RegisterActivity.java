@@ -41,8 +41,6 @@ import java.util.Locale;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RegisterActivity extends AppCompatActivity {
-    private Toolbar toolbar;
-    private CircleImageView toolbarUserImg;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference userDatabaseReference;
 
@@ -58,9 +56,6 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        toolbarUserImg = findViewById(R.id.toolbar_user_img);
-        toolbarUserImg.setVisibility(View.GONE);
 
         firebaseAuth = FirebaseAuth.getInstance();
         loading= new ProgressDialog(this);
