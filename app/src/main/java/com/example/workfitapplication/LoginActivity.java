@@ -17,11 +17,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -45,7 +53,8 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputLayout inputEmail, inputPwd;
     private TextView registerAccount;
     private TextView forgotPwd;
-
+    SignInButton btnSignIn;
+    GoogleSignInClient googleSignInClient;
     private ProgressDialog loading;
 
     @Override
@@ -66,6 +75,21 @@ public class LoginActivity extends AppCompatActivity {
 
         login = findViewById(R.id.login_button);
         login.setOnClickListener(view -> LoggingUser());
+
+        btnSignIn = findViewById(R.id.googleSignIn);
+
+        GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken("949322888142-cbin890d76r5klgvr8u83bvk3hulfngc.apps.googleusercontent.com").requestEmail().build();
+
+        googleSignInClient = GoogleSignIn.getClient(LoginActivity.this, googleSignInOptions);
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = googleSignInClient.getSignInIntent();
+                startActivityForResult(intent, 100);
+            }
+        });
 
         registerAccount.setOnClickListener(view -> CreateAccountUser());
         forgotPwd.setOnClickListener(new View.OnClickListener() {
@@ -160,5 +184,76 @@ public class LoginActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp(){
         onBackPressed();
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // Check condition
+        if(requestCode==100)
+        {
+            // When request code is equal to 100
+            // Initialize task
+            Task<GoogleSignInAccount> signInAccountTask=GoogleSignIn
+                    .getSignedInAccountFromIntent(data);
+
+            // check condition
+            if(signInAccountTask.isSuccessful())
+            {
+                // When google sign in successful
+                // Initialize string
+                String s="Google sign in successful";
+                // Display Toast
+                displayToast(s);
+                // Initialize sign in account
+                try {
+                    // Initialize sign in account
+                    GoogleSignInAccount googleSignInAccount=signInAccountTask
+                            .getResult(ApiException.class);
+                    // Check condition
+                    if(googleSignInAccount!=null)
+                    {
+                        // When sign in account is not equal to null
+                        // Initialize auth credential
+                        AuthCredential authCredential= GoogleAuthProvider
+                                .getCredential(googleSignInAccount.getIdToken()
+                                        ,null);
+                        // Check credential
+                        mAuth.signInWithCredential(authCredential)
+                                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        // Check condition
+                                        if(task.isSuccessful())
+                                        {
+                                            // When task is successful
+                                            startActivity(new Intent(LoginActivity.this
+                                                    ,MainActivity.class)
+                                                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+                                            // Display Toast
+                                            displayToast("Firebase authentication successful");
+                                        }
+                                        else
+                                        {
+                                            // When task is unsuccessful
+                                            // Display Toast
+                                            displayToast("Authentication Failed :"+task.getException()
+                                                    .getMessage());
+                                        }
+                                    }
+                                });
+
+                    }
+                }
+                catch (ApiException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void displayToast(String s) {
+        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
     }
 }

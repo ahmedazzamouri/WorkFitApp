@@ -41,7 +41,7 @@
                 <ImageView
                     android:id="@+id/logo_login"
                     android:layout_width="0dp"
-                    android:layout_height="300dp"
+                    android:layout_height="200dp"
                     app:srcCompat="@drawable/app_logo"
                     app:tint="@color/black"
                     android:scaleType="centerInside"
@@ -99,6 +99,17 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/custom_button"
                 android:text="@string/tv_login"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:textSize="18sp"/>
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/googleSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/common_google_signin_btn_icon_dark_focused"
                 android:textColor="@color/white"
                 android:textAllCaps="true"
                 android:textSize="18sp"/>
