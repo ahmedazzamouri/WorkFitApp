@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">WorkFitApplication</string>
+    <string name="app_name">WorkFit</string>
     <string name="fitness_app">Fitness app</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
     <string name="total_steps_counts">Steps Count</string>
     <string name="total_steps_detect">Steps Detect</string>
+    <string name="steps_objective">Objective</string>
     <string name="start_step_count">0</string>
     <string name="home_page_name">Work Fit</string>
     <string name="better">Better Yourself Each Day</string>
@@ -118,59 +119,5 @@
         <item>Male</item>
         <item>Female</item>
     </array>
-
-
-    ######################DAY SPLITS###############################
-    <string name="workout_splis">Workout Days Split</string>
-    <string name="workout_splits_3days">3 days</string>
-    <string name="workout_splits_4days">4 days</string>
-    <string name="workout_splits_5days">5 days</string>
-    <string name="go_button">Go!</string>
-
-    #######################3 DAY SPLIT##############################
-    <string name="three_day_split">3 Day Split</string>
-    <string name="three_day_split_day1">Day 1:</string>
-    <string name="three_day_split_day2">Day 2:</string>
-    <string name="three_day_split_day3">Day 3:</string>
-    <string name="three_day_split_day1workout">Chest/Back</string>
-    <string name="three_day_split_day2workout">Arms/Shoulders</string>
-    <string name="three_day_split_day3workout">Legs/Abs</string>
-    <string name="three_day_split_day1exercises">1. Dumbbell Press (3x16)\n 2. Dumbbell Flys (3x12)\n 3. Decline Press (3x18)\n 4. Military Press (3x12)\n 5. Dumbbell Rows (3x12)\n 6. Lat Rows (3x18)\n 7. Cable Rows (3x12)\n 8. Barbell DeadLift (3x8)</string>
-    <string name="three_day_split_day2exercises">1. Bicep Curls (3x16)\n 2. Preacher Curls (3x12)\n 3. Incline Curls (3x18)\n 4. Hammer Curls (3x12)\n 5. Tricep Extensions (3x12)\n 6. Cable Pull Downs (3x18)\n 7. SkullCrushers (3x12)\n 8. Diamond Pushups (3x8)</string>
-    <string name="three_day_split_day3exercises">1. Weighted Squats (3x16)\n 2. Reverse Lunges (3x12)\n 3. Side Lunges (3x18)\n 4. Sumo Squats (3x12)\n 5. Deadlifts (3x12)\n 6. Planks (3x18)\n 7. Hanging Knee Raise (3x12)\n 8. Dumbbell Side Bends (3x8)</string>
-
-    <string name="four_day_split">4 Day Split</string>
-    <string name="four_day_split_day1">Day 1:</string>
-    <string name="four_day_split_day2">Day 2:</string>
-    <string name="four_day_split_day3">Day 3:</string>
-    <string name="four_day_split_day4">Day 4:</string>
-    <string name="four_day_split_day1workout">Chest/Triceps</string>
-    <string name="four_day_split_day2workout">Back/Biceps</string>
-    <string name="four_day_split_day3workout">Legs</string>
-    <string name="four_day_split_day4workout">Abs/Shoulders</string>
-    <string name="four_day_split_day1exercises">1. Dumbbell Press (3x16)\n 2. Dumbbell Flys (3x12)\n 3. Decline Press (3x18)\n 4. Tricep Extensions (3x12)\n 5. SkullCrushers (3x12)\n 6. Overhead Extensions (3x18)</string>
-    <string name="four_day_split_day2exercises">1. Bicep Curls (3x16)\n 2. Preacher Curls (3x12)\n 3. Incline Curls (3x18)\n 4. Hammer Curls (3x12)\n 5. Lat Rows (3x12)\n 6. Lat Extensions (3x18)</string>
-    <string name="four_day_split_day3exercises">1. Weighted Squats (3x16)\n 2. Reverse Lunges (3x12)\n 3. Side Lunges (3x18)\n 4. Sumo Squats (3x12)</string>
-    <string name="four_day_split_day4exercises">1. Knee Raises (3x16)\n 2. Side Crunches (3x12)\n 3. Arnold Press (3x18)\n 4. Military Press (3x12)</string>
-
-    ########################5 DAY SPLIT#################################
-    <string name="five_day_split">5 Day Split</string>
-    <string name="five_day_split_day1">Day 1:</string>
-    <string name="five_day_split_day2">Day 2:</string>
-    <string name="five_day_split_day3">Day 3:</string>
-    <string name="five_day_split_day4">Day 4:</string>
-    <string name="five_day_split_day5">Day 5:</string>
-    <string name="five_day_split_day1workout">Chest/Triceps</string>
-    <string name="five_day_split_day2workout">Arms/Shoulders</string>
-    <string name="five_day_split_day3workout">Shoulder/Triceps</string>
-    <string name="five_day_split_day4workout">Legs/Biceps</string>
-    <string name="five_day_split_day5workout">Core/Cardio</string>
-    <string name="five_day_split_day1exercises">1. Incline Press (3x12)\n 2. Close-Hand Press (3x12)\n 3. Decline Press (3x12)\n 4. Dumbbell Flys (3x12)\n 5. Pushups (Muscle failure)\n 6. Tricep Extensions (3x12)\n 7. SkullCrushers (3x12)\n 8. Diamond Pushups (3x10)\n 9. Cable Pull Downs (4x8)\n</string>
-    <string name="five_day_split_day2exercises">1. Lat Rows\n 2. Cable Rows\n 3. Lat Pull Downs\n 4. PullUps\n 5. ChinUps\n 6. Bicep Curls\n 7. Concentration curls\n 8. Preacher Curls\n 9. Incline Curls\n 10. Hammer Curls</string>
-    <string name="five_day_split_day3exercises">1. Arnold Press (4x12)\n 2. Military Press (4x12)\n 3. Cable Pull Downs (4x12)\n 4. SkullCrushers (4x12)\n 5. Close Grip Pushups (4x12)\n 6. Close Grip Bench Press (4x12)</string>
-    <string name="five_day_split_day4exercises">1. Leg Extensions (3x12)\n 2. Leg Curls (3x12)\n 3. Sumo Squats (3x12)\n 4. Squats (3x12)\n 5. Side Steps (3x12)\n 6. Reverse Lunges (3x12)\n 7. Preacher Curls (3x12)\n 8. Bicep Curls (3x12)\n 9. Concentration Curls (3x12)\n 10. Hammer Curls (3x12)</string>
-    <string name="five_day_split_day5exercises">1. Planks (4x30s)\n 2. Burpees (4x60s)\n 3. Reverse Crunches (4x30s)\n 5. Running (20min)\n 6. Jogging(10min)\n 7. Interval Jumping Jacks (4x30s)\n 8.Bodyweight Squats (4x12)</string>
-    <string name="hello_blank_fragment">Hello</string>
-
 
 </resources>

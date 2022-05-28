@@ -18,7 +18,6 @@
         android:theme="@style/Theme.WorkFitApplication">
         <activity android:name=".preferences.PreferencesActivity"/>
         <activity android:name=".ExerciseActivity"/>
-        <activity android:name=".DaySplits"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".CalorieRecommendation"/>
         <activity android:name=".RegisterActivity"/>

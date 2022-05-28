@@ -31,6 +31,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class WorkoutFragment extends Fragment implements View.OnClickListener {
 
@@ -92,12 +93,7 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener {
         String type = typeWorkout.getText().toString();
         String desc = descWorkout.getText().toString();
 
-        Workout workout = new Workout(name);
-        workout.setWorkoutType(type);
-        workout.setDescription(desc);
-        workout.setDate(new Timestamp(System.currentTimeMillis()));
-
-        return workout;
+        return new Workout(name,type, desc, exercises, new Date());
 
     }
 

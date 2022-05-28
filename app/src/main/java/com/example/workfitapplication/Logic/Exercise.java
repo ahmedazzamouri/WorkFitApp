@@ -11,6 +11,10 @@ public class Exercise implements Serializable {
     private int n_repetitions;
     private Type type;
 
+    public Exercise(){
+
+    }
+
     public int getN_series() {
         return n_series;
     }

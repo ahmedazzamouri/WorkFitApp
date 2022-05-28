@@ -12,8 +12,7 @@ public class Workout implements Serializable {
     private ArrayList<Exercise> exercises = new ArrayList<Exercise>();
     private Date date;
 
-    public Workout(String name) {
-        this.name = name;
+    public Workout() {
     }
 
     public Workout(String name, String workoutType, String description, ArrayList<Exercise> exercises, Date date) {
@@ -23,6 +22,7 @@ public class Workout implements Serializable {
         this.exercises = exercises;
         this.date = date;
     }
+
 
     public String getName() {
         return name;
@@ -62,10 +62,6 @@ public class Workout implements Serializable {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public Workout(){
-
     }
 
     public void addExercise(Exercise exercise){ this.exercises.add(exercise);}

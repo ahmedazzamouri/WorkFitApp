@@ -55,12 +55,9 @@ public class WorkoutAdapter extends FirestoreAdapter<WorkoutAdapter.ViewHolder>{
 
             nameView.setText(workout.getName());
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mListener != null){
-                        mListener.onWorkoutSelected(snapshot);
-                    }
+            itemView.setOnClickListener(view -> {
+                if (mListener != null){
+                    mListener.onWorkoutSelected(snapshot);
                 }
             });
 

@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
 
     public static Uri photo;
     private FirebaseAuth mAuth;
-    private Toolbar toolbar;
     BottomNavigationView bottomNav;
     public static final String WIFI = "Wi-Fi";
     public static final String ANY = "Any";
@@ -211,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 return true;
 
             case R.id.logout:
+
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                 firebaseAuth.signOut();
                 startActivity(new Intent(this, LoginActivity.class));
