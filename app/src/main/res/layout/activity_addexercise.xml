@@ -101,8 +101,9 @@
                 android:id="@+id/spinnerType"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
+                android:visibility="visible"
+                android:background="@color/teal_700"
                 android:layout_gravity="center"
-                android:theme="@style/mySpinner"
                 android:entries="@array/type_exercise"/>
 
         </LinearLayout>

@@ -66,5 +66,5 @@ public class Exercise implements Serializable {
     }
 
     @Override
-    public String toString(){ return exercise + " " + n_series + " " + "x" + n_repetitions + " " + type.toString() + " " + "Description:"+ description;}
+    public String toString(){ return "Exercise name:" + exercise + " " + n_series + " " + "x" + n_repetitions + " " + "Type:"+ type.toString() + " " + "Description:"+ description;}
 }
