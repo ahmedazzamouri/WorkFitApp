@@ -110,7 +110,7 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener {
         String type = typeWorkout.getText().toString();
         String desc = descWorkout.getText().toString();
 
-        return new Workout(name,type, desc, exercises, new Date());
+        return new Workout(name,type, desc, exercises,new Date());
 
     }
 
@@ -125,10 +125,6 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener {
             if (!nameWorkout.getText().toString().equals("")) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Workout workout = createWorkoutWithValues();
-                for (Exercise exercise : exercises){
-                    workout.addExercise((exercise));
-                }
-
 
                 addWorkoutToFirebase(workout, db);
 
