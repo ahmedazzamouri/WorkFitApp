@@ -24,6 +24,7 @@
         <activity android:name=".Timer"/>
         <activity android:name=".StepCountActivity"/>
         <activity android:name=".ForgotPasswordActivity"/>
+        <activity android:name=".WorkoutDetailActivity"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true">

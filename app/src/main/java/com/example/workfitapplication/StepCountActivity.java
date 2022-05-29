@@ -31,7 +31,6 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
     private Sensor myStepCounter, myStepDetector;
     private boolean isCounterSensorPresent, isDetectorSensosPresent;
     int stepCount = 0;
-    Button stopCounter;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -51,7 +50,6 @@ public class StepCountActivity extends AppCompatActivity implements SensorEventL
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         tv_StepCounter= findViewById(R.id.steps);
         tv_StepDetector = findViewById(R.id.steps_detect);
-        stopCounter = findViewById(R.id.stop_counter);
 
 
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);

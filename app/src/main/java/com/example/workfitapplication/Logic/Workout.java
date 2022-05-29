@@ -1,15 +1,17 @@
 package com.example.workfitapplication.Logic;
 
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Workout implements Serializable {
+public class Workout implements Serializable{
     private String name;
     private String workoutType;
     private String description;
-    private ArrayList<Exercise> exercises = new ArrayList<Exercise>();
+    private ArrayList<Exercise> exercises = new ArrayList<>();
     private Date date;
 
     public Workout() {
@@ -66,6 +68,16 @@ public class Workout implements Serializable {
 
     public void addExercise(Exercise exercise){ this.exercises.add(exercise);}
 
+    @NonNull
+
     @Override
-    public String toString(){ return name;}
+    public String toString() {
+        return "Workout{" +
+                "name='" + name + '\'' +
+                ", workoutType='" + workoutType + '\'' +
+                ", description='" + description + '\'' +
+                ", exercises=" + exercises +
+                ", date=" + date +
+                '}';
+    }
 }
