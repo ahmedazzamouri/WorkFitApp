@@ -1,9 +1,11 @@
 package com.example.workfitapplication;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -86,7 +88,22 @@ public class WorkoutDetailActivity extends AppCompatActivity implements EventLis
         for (Exercise exercise : exerciseList) {
             exercises.add(exercise.toString());
         }
-        exerciseAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exercises);
+        exerciseAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, exercises){
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent){
+            // Get the Item from ListView
+            View view = super.getView(position, convertView, parent);
+
+            // Initialize a TextView for ListView each Item
+            TextView tv = (TextView) view.findViewById(android.R.id.text1);
+
+            // Set the text color of TextView (ListView Item)
+            tv.setTextColor(Color.BLACK);
+
+            // Generate ListView Item using TextView
+            return view;
+        }
+    };
         Exercises.setAdapter(exerciseAdapter);
     }
 

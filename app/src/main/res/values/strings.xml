@@ -5,11 +5,8 @@
     <string name="Close">Close</string>
     <string name="total_steps_counts">Steps Count</string>
     <string name="total_steps_detect">Steps Detect</string>
-    <string name="steps_objective">Objective</string>
     <string name="start_step_count">0</string>
     <string name="home_page_name">Work Fit</string>
-    <string name="better">Better Yourself Each Day</string>
-    <string name="home_page_msg">We hope you make an optimum use\n of the app for your gains</string>
 
     <string name="name">Name</string>
     <string name="namedefault">None</string>
@@ -114,6 +111,18 @@
     <string name="enter_height_in_cm">Enter Height in cm</string>
     <string name="enter_weight_in_kg">Enter Weight in Kg</string>
     <string name="edit_gender">Enter your gender:</string>
+    <string name="logout">Logout</string>
+    <string name="step_counter">Step Counter</string>
+    <string name="add_exercise">ADD EXERCISE</string>
+    <string name="create_workout">CREATE WORKOUT</string>
+    <string name="workout_description">Workout Description</string>
+    <string name="workout_type">Workout Type</string>
+    <string name="workout_name">Workout Name</string>
+    <string name="workouts">Workouts</string>
+    <string name="name_workout">Name</string>
+    <string name="workoutType">Type</string>
+    <string name="workoutDescription">Description</string>
+    <string name="exercises">Exercises</string>
 
     <array name="gender">
         <item>Male</item>

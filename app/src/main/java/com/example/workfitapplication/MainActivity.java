@@ -215,6 +215,18 @@ public class MainActivity extends AppCompatActivity implements NavigationBarView
                 firebaseAuth.signOut();
                 startActivity(new Intent(this, LoginActivity.class));
                 finish();
+
+            case R.id.workout_timer:
+                startActivity(new Intent(this, Timer.class));
+                return true;
+
+            case R.id.step_counter:
+                startActivity(new Intent(this, StepCountActivity.class));
+                return true;
+
+            case R.id.calorie_calculator:
+                startActivity(new Intent(this, CalorieRecommendation.class));
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

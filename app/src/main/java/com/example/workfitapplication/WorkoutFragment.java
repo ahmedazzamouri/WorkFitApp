@@ -2,6 +2,7 @@ package com.example.workfitapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -81,7 +83,22 @@ public class WorkoutFragment extends Fragment implements View.OnClickListener {
     }
 
     private void LoadAdapterExercises() {
-        exerciseAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, exer);
+        exerciseAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, exer){
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent){
+                // Get the Item from ListView
+                View view = super.getView(position, convertView, parent);
+
+                // Initialize a TextView for ListView each Item
+                TextView tv = (TextView) view.findViewById(android.R.id.text1);
+
+                // Set the text color of TextView (ListView Item)
+                tv.setTextColor(Color.BLACK);
+
+                // Generate ListView Item using TextView
+                return view;
+            }
+        };
         Exercises.setAdapter(exerciseAdapter);
     }
 

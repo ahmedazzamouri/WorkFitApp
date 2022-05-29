@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/bttn_calc"
-        android:layout_width="108dp"
+        android:layout_width="118dp"
         android:layout_height="48dp"
         android:background="@color/black"
         android:text="@string/calc_calorie"
@@ -24,6 +24,7 @@
         app:layout_constraintVertical_bias="0.386"/>
     
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/cal_maintain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,6 +37,7 @@
 
     <TextView
         android:id="@+id/cal_bulk"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -50,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:textColor="@color/black"
         android:text="@string/calculator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.711"
@@ -58,6 +61,7 @@
 
     <TextView
         android:id="@+id/calorie_intake"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="336dp"
@@ -70,6 +74,7 @@
 
     <TextView
         android:id="@+id/cal_macros"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="188dp"
@@ -86,6 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/calculator"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,8 +102,9 @@
         android:id="@+id/macros_carbs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/calculator"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +114,9 @@
         android:id="@+id/macros_fat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="34dp"
         android:text="@string/calculator"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.686"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,6 +129,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/baloo"
         android:text="@string/maintenance"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.323"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +142,7 @@
         android:layout_marginTop="32dp"
         android:fontFamily="@font/baloo"
         android:text="@string/bulk"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,6 +155,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/baloo"
         android:text="@string/cut"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,6 +168,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/baloo"
         android:text="@string/macros_protein"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="parent"
@@ -166,9 +178,10 @@
         android:id="@+id/carbs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/baloo"
         android:text="@string/macros_carbs"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,15 +191,17 @@
         android:id="@+id/fats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/baloo"
         android:text="@string/macros_fats"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carbs"/>
 
     <TextView
+        android:textColor="@color/black"
         android:id="@+id/calculator_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -213,6 +228,7 @@
         android:singleLine="true"
         android:textColorHint="#000"
         android:gravity="center_horizontal"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -225,6 +241,7 @@
         android:ems="10"
         android:fontFamily="@font/baloo"
         android:hint="@string/enter_height_in_cm"
+        android:textColor="@color/black"
         android:inputType="number|numberDecimal"
         android:singleLine="true"
         android:textColorHint="#000"
@@ -242,6 +259,7 @@
         android:fontFamily="@font/baloo"
         android:ems="10"
         android:hint="@string/enter_weight_in_kg"
+        android:textColor="@color/black"
         android:inputType="number|numberDecimal"
         android:singleLine="true"
         android:textColorHint="#000"
@@ -259,6 +277,7 @@
         android:fontFamily="@font/baloo"
         android:gravity="center_horizontal"
         android:text="@string/edit_gender"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="parent"

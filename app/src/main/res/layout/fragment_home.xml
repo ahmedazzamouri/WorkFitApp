@@ -4,12 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent">
+    android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/homeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Community Workouts"
+            android:fontFamily="@font/indigo_daisy"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:layout_marginStart="-20dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/workoutList"
         android:layout_width="match_parent"
         android:layout_height="535dp"
-        tools:listitem="@layout/item_workout"/>
+        tools:listitem="@layout/item_workout"
+        android:layout_below="@+id/homeTitle"/>
+
+
 
 </RelativeLayout>

@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inspector.IntFlagMapping;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -36,16 +35,18 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
         EditText nameExercise = findViewById(R.id.nameExercise);
         EditText n_series = findViewById(R.id.n_series);
         EditText n_repetitions = findViewById(R.id.n_repetitions);
+        EditText descriptionExercise = findViewById(R.id.descExercise);
         Spinner exerciseType = findViewById(R.id.spinnerType);
 
         String name = nameExercise.getText().toString();
         int series = Integer.parseInt(n_series.getText().toString());
         int repetitions = Integer.parseInt(n_repetitions.getText().toString());
         String type = exerciseType.getSelectedItem().toString();
+        String description = descriptionExercise.getText().toString();
 
         Type typeExercise = setType(type);
 
-        Exercise exercise = new Exercise(name, series, repetitions, typeExercise);
+        Exercise exercise = new Exercise(name, series, repetitions, typeExercise, description);
 
         Intent intent = new Intent();
         intent.putExtra("exercise", exercise);

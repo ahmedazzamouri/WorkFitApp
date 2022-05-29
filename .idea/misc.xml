@@ -35,10 +35,10 @@
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/drawable/edittext_custom.xml" value="0.114" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/font/baloo.xml" value="0.396875" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/font/black_ops.xml" value="1.925" />
-        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_addexercise.xml" value="0.33" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_addexercise.xml" value="0.29213483146067415" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_calorie_recommendation.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_daysplits.xml" value="0.25" />
-        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_detail_workout.xml" value="0.1" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_detail_workout.xml" value="0.25" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_errorinternet.xml" value="0.24954710144927536" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_five_day_split.xml" value="0.46407382992748847" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
@@ -53,9 +53,9 @@
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_three_day_split.xml" value="0.5" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/activity_timer.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/error_layout.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_addworkout.xml" value="0.33" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_addworkout.xml" value="0.26685393258426965" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_error_internet.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/header.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/ahmed/Desktop/GEI/WorkFitApp/app/src/main/res/layout/item_list.xml" value="0.67" />

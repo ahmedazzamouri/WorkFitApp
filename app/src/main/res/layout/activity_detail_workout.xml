@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,10 +18,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="Workouts"
+                android:text="@string/workouts"
                 android:fontFamily="@font/indigo_daisy"
                 android:gravity="center"
-                android:textSize="40sp"/>
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:layout_marginStart="-20dp"/>
 
 
         </LinearLayout>
@@ -32,7 +35,8 @@
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                android:text="Name"
+                android:text="@string/name_workout"
+                android:textColor="@color/black"
                 android:fontFamily="@font/indigo_daisy"
                 android:textStyle="bold"
                 android:textSize="30sp"
@@ -40,8 +44,9 @@
 
             <TextView
                 android:id="@+id/workoutNameView"
-                android:layout_width="200dp"
+                android:layout_width="160dp"
                 android:layout_height="60dp"
+                android:textColor="@color/black"
                 android:gravity="center"/>
 
             <TextView
@@ -49,15 +54,17 @@
                 android:layout_height="60dp"
                 android:fontFamily="@font/indigo_daisy"
                 android:gravity="center"
-                android:text="Type"
+                android:textColor="@color/black"
+                android:text="@string/workoutType"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                android:layout_marginStart="-20sp"/>
+                android:layout_marginStart="-70sp"/>
 
             <TextView
                 android:id="@+id/workoutTypeView"
-                android:layout_width="match_parent"
+                android:layout_width="140dp"
                 android:layout_height="60dp"
+                android:textColor="@color/black"
                 android:gravity="center"/>
 
         </LinearLayout>
@@ -70,13 +77,15 @@
             <TextView
                 android:layout_width="100sp"
                 android:layout_height="60dp"
-                android:text="Description"
+                android:text="@string/workoutDescription"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:fontFamily="@font/indigo_daisy"
                 android:textSize="30sp"
                 android:gravity="center"/>
 
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/workoutDescriptionView"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -91,7 +100,8 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:text="Exercises"
+                android:text="@string/exercises"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="30sp"
                 android:fontFamily="@font/indigo_daisy"

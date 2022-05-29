@@ -11,6 +11,16 @@ public class Exercise implements Serializable {
     private int n_repetitions;
     private Type type;
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    private String description;
+
     public Exercise(){
 
     }
@@ -43,11 +53,12 @@ public class Exercise implements Serializable {
         this.exercise = exercise;
     }
 
-    public Exercise(String exercise, int n_series, int n_repetitions, Type type){
+    public Exercise(String exercise, int n_series, int n_repetitions, Type type, String description){
         this.exercise = exercise;
         this.n_series = n_series;
         this.n_repetitions = n_repetitions;
         this.type = type;
+        this.description = description;
     }
 
     public String getExercise() {
@@ -55,5 +66,5 @@ public class Exercise implements Serializable {
     }
 
     @Override
-    public String toString(){ return exercise + " " + n_series + " " + "x" + n_repetitions + " " + type.toString();}
+    public String toString(){ return exercise + " " + n_series + " " + "x" + n_repetitions + " " + type.toString() + " " + "Description:"+ description;}
 }
